@@ -1,18 +1,27 @@
-The Stanford Enhancer is used to generate enhanced graphs for those UD v2.4 corpora that lack them.
-We use a version we built from CoreNLP GitHub (commit #5fdbfb2).
-
-1. Clone the CoreNLP repository and build the project
+1. Clone the CoreNLP repository (it contains the Stanford Enhancer) and build the project
 https://github.com/stanfordnlp/CoreNLP
+We use a version we built from CoreNLP GitHub (commit #5fdbfb2).
+Our copy of CorNLP is at /net/work/people/droganova/CoreNLP.
 
-2. Download Universal Dependencies 2.4
-https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-2988
 
-Data enhanced using the Stanford enhancer is here:
-/lnet/spec/work/people/droganova/Data_for_Enhancer/final_2.4
 
-It has been pruned and some treebanks are missing:
+2. Obtain the official release of Universal Dependencies.
+See https://universaldependencies.org/ for the permanent URI of the latest UD release.
+At ÚFAL, we have all releases in /net/data, e.g.:
+/net/data/universal-dependencies-2.5
+
+We must exclude some UD treebanks:
 6 treebanks because they have no text (copyright issues)
-19 others because their lemmatization is incomplete:
+
+UD_Arabic-NYUAD
+UD_English-ESL
+UD_French-FTB
+UD_Hindi_English-HIENCS
+UD_Japanese-BCCWJ
+UD_Mbya_Guarani-Dooley
+
+19 others because their lemmatization is incomplete
+(note that we do not exclude a treebank if it has automatically predicted lemmas):
 
 UD_Bambara-CRB
 UD_Cantonese-HK
@@ -40,6 +49,7 @@ are available. This is because it is not trivial to merge partial manual enhance
 
 The following treebanks contain trusted annotation of all five
 enhancement types (no enhancements are needed):
+
 UD_Dutch-Alpino
 UD_Dutch-LassySmall
 UD_English-EWT
@@ -48,6 +58,8 @@ UD_Swedish-PUD
 UD_Swedish-Talbanken
 
 For the rest of the UD v2.4 treebanks we remove the original enhanced annotation and run the enhancer.
+
+
 
 3. To run the enhancer
 java -mx4g -cp "*" edu.stanford.nlp.trees.ud.UniversalEnhancer -relativePronouns "pron1|pron2" -conlluFile input_file.conllu -embeddings embedding_file.vectors > output_file.conllu
@@ -59,6 +71,11 @@ https://lindat.mff.cuni.cz/repository/xmlui/handle/11234/1-1989
 -relativePronouns is an obligatory parameter.
 For every language, we extract lists of relative pronouns relying on PronType feature (PronType=Rel; https://universaldependencies.org/u/feat/PronType.html#Rel).
 If PronType feature is not available in neither of treebanks of a language, we run the enhancer with -relativePronouns "".
+
+Data enhanced using the Stanford enhancer is here:
+/net/work/people/droganova/Data_for_Enhancer/final_2.4
+
+
 
 4. PACKAGE THE DATA FOR RELEASE IN LINDAT:
 tar czf deep-ud-2.4-data.tgz deep
