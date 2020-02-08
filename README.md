@@ -67,6 +67,8 @@ java -mx4g -cp "*" edu.stanford.nlp.trees.ud.UniversalEnhancer -relativePronouns
 -embeddings is an optional parameter.
 We use embeddings that were prepared for CoNLL 2017 Shared Task:
 http://hdl.handle.net/11234/1-1989
+Download like this (22 GB):
+curl --remote-name-all https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11234/1-1989/word-embeddings-conll17.tar
 
 -relativePronouns is an obligatory parameter.
 For every language, we extract lists of relative pronouns relying on PronType feature (PronType=Rel; https://universaldependencies.org/u/feat/PronType.html#Rel).
