@@ -25,7 +25,7 @@ embeddings:
 # Remove enhanced graphs from UD-released treebanks (except the trusted ones).
 nodeps:
 	mkdir -p data/nodeps
-	rm -f data/nodeps/UD_*
+	rm -rf data/nodeps/UD_*
 	cp -r data/ud/UD_* data/nodeps
 	for i in data/nodeps/UD_*/*.conllu ; do echo $$i ; cat $$i | perl -pe 'if(m/^\d+\t/) { @f=split(/\t/); $$f[8]="_"; $$_=join("\t",@f); }' > nodeps ; mv nodeps $$i ; done
 
