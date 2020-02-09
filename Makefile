@@ -36,4 +36,4 @@ enhance:
 	mkdir -p data/enhanced
 	rm -rf data/enhanced/UD_*
 	cp -r data/nodeps/UD_* data/enhanced
-	for i in data/enhanced/UD_*/*.conllu ; do language=`dirname $$i | perl -pe 's:-.+$::; s:^.*UD_::'` ; relpron=`cat data/relpron/relpron-$$language.txt` ; embeddings=`ls -1 data/embeddings/$$language | grep vectors` ; echo $$i '('$$language, $$relpron, $$embeddings')' ; echo java -mx4g -cp $(CORENLPDIR) edu.stanford.nlp.trees.ud.UniversalEnhancer -relativePronouns "$$relpron" -conlluFile input_file.conllu -embeddings embedding_file.vectors > enhanced.conllu ; mv enhanced.conllu $$i ; done
+	for i in data/enhanced/UD_*/*.conllu ; do ./stanford_enhancer.sh $$i ; done
