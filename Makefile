@@ -30,6 +30,7 @@ embeddings:
 # See also /net/work/people/droganova/CoreNLP/src/edu/stanford/nlp/neural/Embedding.java
 emb_for_stanford:
 	for i in data/embeddings/*/*.vectors ; do backup=`dirname $$i`/`basename $$i .vectors`.backup ; mv $$i $$backup ; cat $$backup | perl -e '$$x=<>; while(<>) {print}' > $$i ; done
+	# cat it.backup | perl -pe '<>; while(<>) {print}' > it.vectors ; xz it.vectors
 
 # Remove enhanced graphs from UD-released treebanks (except the trusted ones).
 nodeps:
