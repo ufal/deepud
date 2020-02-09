@@ -27,8 +27,9 @@ embeddings:
 # The word embeddings from the CoNLL 2017 shared task always have a header line with two numbers:
 # number of words, and number of dimensions. Stanford CoreNLP does not expect this line, so we must
 # delete it!
+# See also /net/work/people/droganova/CoreNLP/src/edu/stanford/nlp/neural/Embedding.java
 emb_for_stanford:
-	for i in data/embeddings/*/*.vectors ; do backup=`dirname $$i`/`basename $$i .vectors`.backup ; mv $$i $$backup ; cat $$backup | perl -e '<>; while(<>) {print}' > $$i ; done
+	for i in data/embeddings/*/*.vectors ; do backup=`dirname $$i`/`basename $$i .vectors`.backup ; mv $$i $$backup ; cat $$backup | perl -e '$$x=<>; while(<>) {print}' > $$i ; done
 
 # Remove enhanced graphs from UD-released treebanks (except the trusted ones).
 nodeps:
@@ -44,4 +45,3 @@ enhance:
 	cp -r data/nodeps/UD_* data/enhanced
 	for i in data/enhanced/UD_*/*.conllu ; do ./stanford_enhancer.sh $$i ; done
 
-/net/work/people/droganova/CoreNLP/src/edu/stanford/nlp/neural/Embedding.java
