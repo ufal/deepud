@@ -11,6 +11,6 @@ language=`dirname $1 | perl -pe 's:-.+$::; s:^.*UD_::'`
 relpron=`cat data/relpron/relpron-$language.txt`
 embeddings=data/embeddings/$language/`ls -1 data/embeddings/$language | grep vectors`
 echo $1 '('$language, $relpron, $embeddings')'
-java -mx4g -cp $CORENLPDIR edu.stanford.nlp.trees.ud.UniversalEnhancer -relativePronouns "$relpron" -conlluFile $1 -embeddings $embeddings > enhanced.conllu
+java -mx4g -cp "$CORENLPDIR/*" edu.stanford.nlp.trees.ud.UniversalEnhancer -relativePronouns "$relpron" -conlluFile $1 -embeddings $embeddings -numHid 100 > enhanced.conllu
 mv enhanced.conllu $1
 
