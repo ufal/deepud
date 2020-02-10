@@ -20,11 +20,25 @@ relpron:
 	for i in `cat data/languages.txt` ; do cat data/ud/UD_$$i*/*.conllu | perl -e 'while(<>) { if(m/^\d+\t/) { @f=split(/\t/); @pt=grep{/^PronType=/}(split(/\|/,$$f[5])); if(@pt && $$pt[0]=~/Rel/) { $$h{$$f[2]}++ } } } @k=sort(keys(%h)); print(join("|",@k))' > data/relpron/relpron-$$i.txt ; done
 
 embeddings:
-	cd data ; curl --remote-name-all https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11234/1-1989/word-embeddings-conll17.tar
+	cd data ; curl --remote-name-all https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11234/1-1989{/word-embeddings-conll17.tar,/conll2017-surprise-languages.zip}
 	mkdir -p data/embeddings
 	cd data/embeddings ; tar xf ../word-embeddings-conll17.tar ; ln -s Norwegian-Bokmaal Norwegian
 	rm data/word-embeddings-conll17.tar
 	for i in data/embeddings/*/*.vectors.xz ; do unxz $$i ; done
+	# CoNLL 2017 surprise languages.
+	cd data ; unzip conll2017-surprise-languages.zip
+	rm data/conll2017-surprise-languages.zip
+	udpipe --output=horizontal none --outfile {}.txt *.conllu
+	lowercase
+	concatenate files
+	# https://code.google.com/archive/p/word2vec/ ... code.google.com is now archived, so the following copy may work:
+	# https://github.com/tmikolov/word2vec ... but there are other implementations online, in many languages, and perhaps better maintained
+	/home/zeman/nastroje/word2vec/word2vec -min-count 10 -size 100 -window 10 -negative 5 -iter 2 -threads 16 -cbow 0 -binary 0 -train INFILE -output OUTFILE
+
+buryat:
+	udpipe --train data/conll2017-surprise-languages/UD_Buryat/bxr.udpipe data/conll2017-surprise-languages/UD_Buryat/bxr-ud-sample.conllu
+	udpipe --tokenize data/conll2017-surprise-languages/UD_Buryat/bxr.udpipe --output=horizontal none < data/conll2017-surprise-languages/UD_Buryat/bxr-20161120-pages-articles-000.txt | perl -CSA -pe '$$_=lc($$_)' > data/conll2017-surprise-languages/UD_Buryat/bxr.tokenized.lowercased.txt
+	/home/zeman/nastroje/word2vec/word2vec -min-count 10 -size 100 -window 10 -negative 5 -iter 2 -threads 16 -cbow 0 -binary 0 -train data/conll2017-surprise-languages/UD_Buryat/bxr.tokenized.lowercased.txt -output data/conll2017-surprise-languages/UD_Buryat/bxr.vectors
 
 # The word embeddings from the CoNLL 2017 shared task always have a header line with two numbers:
 # number of words, and number of dimensions. Stanford CoreNLP does not expect this line, so we must
