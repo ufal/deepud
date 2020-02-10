@@ -9,12 +9,14 @@ fetch:
 	cp -r $(UDSRCDIR)/UD_* data/ud
 	cd data/ud ; rm -rf $(UDEXCLUDE)
 
+languages:
+	ls data/ud | perl -e 'while(<>) { $$x .= " " . $$_ } $$x =~ s/^\s+//s; $$x =~ s/\s+$$//s; @x=map{s/^UD_//; s/-.*//; $$_}(split(/\s+/,$$x)); foreach my $$x (@x) { $$x{$$x}++ } print(join(" ",sort(keys(%x))))' > data/languages.txt
+
 # The Stanford Enhancer needs the list of relative pronouns for each language.
 ###!!! Forms or lemmas?
 # Probably forms. See also /net/work/people/droganova/Data_for_Enhancer/rel_pronouns.
 relpron:
 	mkdir -p data/relpron
-	ls data/ud | perl -e 'while(<>) { $$x .= " " . $$_ } $$x =~ s/^\s+//s; $$x =~ s/\s+$$//s; @x=map{s/^UD_//; s/-.*//; $$_}(split(/\s+/,$$x)); foreach my $$x (@x) { $$x{$$x}++ } print(join(" ",sort(keys(%x))))' > data/languages.txt
 	for i in `cat data/languages.txt` ; do cat data/ud/UD_$$i*/*.conllu | perl -e 'while(<>) { if(m/^\d+\t/) { @f=split(/\t/); @pt=grep{/^PronType=/}(split(/\|/,$$f[5])); if(@pt && $$pt[0]=~/Rel/) { $$h{$$f[2]}++ } } } @k=sort(keys(%h)); print(join("|",@k))' > data/relpron/relpron-$$i.txt ; done
 
 embeddings:
@@ -31,6 +33,12 @@ embeddings:
 emb_for_stanford:
 	for i in data/embeddings/*/*.vectors ; do backup=`dirname $$i`/`basename $$i .vectors`.backup ; mv $$i $$backup ; cat $$backup | perl -e '$$x=<>; while(<>) {print}' > $$i ; done
 	# cat it.backup | perl -pe '<>; while(<>) {print}' > it.vectors ; xz it.vectors
+
+# Report languages for which we lack word embeddings.
+check_embeddings:
+	for i in `cat data/languages.txt` ; do if [[ ! -d data/embeddings/$$i ]] ; then echo Missing embeddings for language $$i. ; fi ; done
+
+###!!!xzcat:
 
 # Remove enhanced graphs from UD-released treebanks (except the trusted ones).
 nodeps:
