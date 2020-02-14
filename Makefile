@@ -28,17 +28,30 @@ embeddings:
 	# CoNLL 2017 surprise languages.
 	cd data ; unzip conll2017-surprise-languages.zip
 	rm data/conll2017-surprise-languages.zip
-	udpipe --output=horizontal none --outfile {}.txt *.conllu
-	lowercase
-	concatenate files
-	# https://code.google.com/archive/p/word2vec/ ... code.google.com is now archived, so the following copy may work:
-	# https://github.com/tmikolov/word2vec ... but there are other implementations online, in many languages, and perhaps better maintained
-	/home/zeman/nastroje/word2vec/word2vec -min-count 10 -size 100 -window 10 -negative 5 -iter 2 -threads 16 -cbow 0 -binary 0 -train INFILE -output OUTFILE
+	make buryat
+	make kurmanji
+	make north_sami
+	make upper_sorbian
+	rm -rf data/embeddings/{Buryat,Kurmanji,North_Sami,Upper_Sorbian}
+	mkdir data/embeddings/Buryat
+	cat data/conll2017-surprise-languages/UD_Buryat/bxr.vectors | xz > data/embeddings/Buryat/bxr.vectors.xz
+	mkdir data/embeddings/Kurmanji
+	cat data/conll2017-surprise-languages/UD_Kurmanji/kmr.vectors | xz > data/embeddings/Kurmanji/kmr.vectors.xz
+	mkdir data/embeddings/North_Sami
+	cat data/conll2017-surprise-languages/UD_North_Sami/sme.vectors | xz > data/embeddings/North_Sami/sme.vectors.xz
+	mkdir data/embeddings/Upper_Sorbian
+	cat data/conll2017-surprise-languages/UD_Upper_Sorbian/hsb.vectors | xz > data/embeddings/Upper_Sorbian/hsb.vectors.xz
+	# Jenže teď chci s těmito jazyky udělat ještě tohle, protože s ostatními už je to uděláno:
+	# backup=`dirname $$i`/`basename $$i .vectors`.backup ; mv $$i $$backup ; cat $$backup | perl -e '$$x=<>; while(<>) {print}' > $$i
+	# tedy:
+	# cat data/conll2017-surprise-languages/UD_Upper_Sorbian/hsb.vectors | perl -e '<>; while(<>) {print}' | xz > data/embeddings/Upper_Sorbian/hsb.vectors.xz
 
 BXRDIR=data/conll2017-surprise-languages/UD_Buryat
 KMRDIR=data/conll2017-surprise-languages/UD_Kurmanji
 SMEDIR=data/conll2017-surprise-languages/UD_North_Sami
 HSBDIR=data/conll2017-surprise-languages/UD_Upper_Sorbian
+# https://code.google.com/archive/p/word2vec/ ... code.google.com is now archived, so the following copy may work:
+# https://github.com/tmikolov/word2vec ... but there are other implementations online, in many languages, and perhaps better maintained
 
 buryat:
 	udpipe --train $(BXRDIR)/bxr.udpipe $(BXRDIR)/bxr-ud-sample.conllu
