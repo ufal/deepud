@@ -9,8 +9,15 @@ fi
 CORENLPDIR=/net/work/people/droganova/CoreNLP
 language=`dirname $1 | perl -pe 's:-.+$::; s:^.*UD_::'`
 relpron=`cat data/relpron/relpron-$language.txt`
-embeddings=data/embeddings/$language/`ls -1 data/embeddings/$language | grep vectors`
-echo $1 '('$language, $relpron, $embeddings')'
-java -mx4g -cp "$CORENLPDIR/*" edu.stanford.nlp.trees.ud.UniversalEnhancer -relativePronouns "$relpron" -conlluFile $1 -embeddings $embeddings -numHid 100 > enhanced.conllu
-mv enhanced.conllu $1
-
+if [[ -d "data/embeddings/$language" ]] ; then
+  embeddings=data/embeddings/$language/`ls -1 data/embeddings/$language | grep vectors`
+  echo $1 '('$language, $relpron, $embeddings')'
+  xzcat $embeddings > data/current.vectors
+  java -mx4g -cp "$CORENLPDIR/*" edu.stanford.nlp.trees.ud.UniversalEnhancer -relativePronouns "$relpron" -conlluFile $1 -embeddings data/current.vectors -numHid 100 > enhanced.conllu
+  mv enhanced.conllu $1
+  rm -f data/current.vectors
+else
+  echo $1 '('$language, $relpron, NO EMBEDDINGS')'
+  java -mx4g -cp "$CORENLPDIR/*" edu.stanford.nlp.trees.ud.UniversalEnhancer -relativePronouns "$relpron" -conlluFile $1 -numHid 100 > enhanced.conllu
+  mv enhanced.conllu $1
+fi
