@@ -22,7 +22,7 @@ relpron:
 embeddings:
 	cd data ; curl --remote-name-all https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11234/1-1989{/word-embeddings-conll17.tar,/conll2017-surprise-languages.zip}
 	mkdir -p data/embeddings
-	cd data/embeddings ; tar xf ../word-embeddings-conll17.tar ; ln -s Norwegian-Bokmaal Norwegian
+	cd data/embeddings ; tar xf ../word-embeddings-conll17.tar ; ln -s Norwegian-Bokmaal Norwegian ; ln -s ChineseT Chinese
 	rm data/word-embeddings-conll17.tar
 	for i in data/embeddings/*/*.vectors.xz ; do unxz $$i ; done
 	# CoNLL 2017 surprise languages.
