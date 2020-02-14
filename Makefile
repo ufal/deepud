@@ -36,10 +36,29 @@ embeddings:
 	/home/zeman/nastroje/word2vec/word2vec -min-count 10 -size 100 -window 10 -negative 5 -iter 2 -threads 16 -cbow 0 -binary 0 -train INFILE -output OUTFILE
 
 BXRDIR=data/conll2017-surprise-languages/UD_Buryat
+KMRDIR=data/conll2017-surprise-languages/UD_Kurmanji
+SMEDIR=data/conll2017-surprise-languages/UD_North_Sami
+HSBDIR=data/conll2017-surprise-languages/UD_Upper_Sorbian
+
 buryat:
 	udpipe --train $(BXRDIR)/bxr.udpipe $(BXRDIR)/bxr-ud-sample.conllu
 	udpipe --tokenize $(BXRDIR)/bxr.udpipe --output=horizontal < $(BXRDIR)/bxr-20161120-pages-articles-000.txt | perl -CSA -pe '$$_=lc($$_)' > $(BXRDIR)/bxr.tokenized.lowercased.txt
 	/home/zeman/nastroje/word2vec/word2vec -min-count 10 -size 100 -window 10 -negative 5 -iter 2 -threads 16 -cbow 0 -binary 0 -train $(BXRDIR)/bxr.tokenized.lowercased.txt -output $(BXRDIR)/bxr.vectors
+
+kurmanji:
+	udpipe --train $(KMRDIR)/kmr.udpipe $(KMRDIR)/kmr-ud-sample.conllu
+	udpipe --tokenize $(KMRDIR)/kmr.udpipe --output=horizontal < $(KMRDIR)/kmr-20161120-pages-articles-000.txt | perl -CSA -pe '$$_=lc($$_)' > $(KMRDIR)/kmr.tokenized.lowercased.txt
+	/home/zeman/nastroje/word2vec/word2vec -min-count 10 -size 100 -window 10 -negative 5 -iter 2 -threads 16 -cbow 0 -binary 0 -train $(KMRDIR)/kmr.tokenized.lowercased.txt -output $(KMRDIR)/kmr.vectors
+
+north_sami:
+	udpipe --train $(SMEDIR)/sme.udpipe $(SMEDIR)/sme-ud-sample.conllu
+	udpipe --tokenize $(SMEDIR)/sme.udpipe --output=horizontal < $(SMEDIR)/sme-20161120-pages-articles-000.txt | perl -CSA -pe '$$_=lc($$_)' > $(SMEDIR)/sme.tokenized.lowercased.txt
+	/home/zeman/nastroje/word2vec/word2vec -min-count 10 -size 100 -window 10 -negative 5 -iter 2 -threads 16 -cbow 0 -binary 0 -train $(SMEDIR)/sme.tokenized.lowercased.txt -output $(SMEDIR)/sme.vectors
+
+upper_sorbian:
+	udpipe --train $(HSBDIR)/hsb.udpipe $(HSBDIR)/hsb-ud-sample.conllu
+	udpipe --tokenize $(HSBDIR)/hsb.udpipe --output=horizontal < $(HSBDIR)/hsb-20161120-pages-articles-000.txt | perl -CSA -pe '$$_=lc($$_)' > $(HSBDIR)/hsb.tokenized.lowercased.txt
+	/home/zeman/nastroje/word2vec/word2vec -min-count 10 -size 100 -window 10 -negative 5 -iter 2 -threads 16 -cbow 0 -binary 0 -train $(HSBDIR)/hsb.tokenized.lowercased.txt -output $(HSBDIR)/hsb.vectors
 
 # The word embeddings from the CoNLL 2017 shared task always have a header line with two numbers:
 # number of words, and number of dimensions. Stanford CoreNLP does not expect this line, so we must
