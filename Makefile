@@ -35,10 +35,11 @@ embeddings:
 	# https://github.com/tmikolov/word2vec ... but there are other implementations online, in many languages, and perhaps better maintained
 	/home/zeman/nastroje/word2vec/word2vec -min-count 10 -size 100 -window 10 -negative 5 -iter 2 -threads 16 -cbow 0 -binary 0 -train INFILE -output OUTFILE
 
+BXRDIR=data/conll2017-surprise-languages/UD_Buryat
 buryat:
-	udpipe --train data/conll2017-surprise-languages/UD_Buryat/bxr.udpipe data/conll2017-surprise-languages/UD_Buryat/bxr-ud-sample.conllu
-	udpipe --tokenize data/conll2017-surprise-languages/UD_Buryat/bxr.udpipe --output=horizontal none < data/conll2017-surprise-languages/UD_Buryat/bxr-20161120-pages-articles-000.txt | perl -CSA -pe '$$_=lc($$_)' > data/conll2017-surprise-languages/UD_Buryat/bxr.tokenized.lowercased.txt
-	/home/zeman/nastroje/word2vec/word2vec -min-count 10 -size 100 -window 10 -negative 5 -iter 2 -threads 16 -cbow 0 -binary 0 -train data/conll2017-surprise-languages/UD_Buryat/bxr.tokenized.lowercased.txt -output data/conll2017-surprise-languages/UD_Buryat/bxr.vectors
+	udpipe --train $(BXRDIR)/bxr.udpipe $(BXRDIR)/bxr-ud-sample.conllu
+	udpipe --tokenize $(BXRDIR)/bxr.udpipe --output=horizontal < $(BXRDIR)/bxr-20161120-pages-articles-000.txt | perl -CSA -pe '$$_=lc($$_)' > $(BXRDIR)/bxr.tokenized.lowercased.txt
+	/home/zeman/nastroje/word2vec/word2vec -min-count 10 -size 100 -window 10 -negative 5 -iter 2 -threads 16 -cbow 0 -binary 0 -train $(BXRDIR)/bxr.tokenized.lowercased.txt -output $(BXRDIR)/bxr.vectors
 
 # The word embeddings from the CoNLL 2017 shared task always have a header line with two numbers:
 # number of words, and number of dimensions. Stanford CoreNLP does not expect this line, so we must
