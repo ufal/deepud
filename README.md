@@ -3,6 +3,11 @@ https://github.com/stanfordnlp/CoreNLP
 We use a version we built from CoreNLP GitHub (commit #5fdbfb2).
 Our copy of CorNLP is at /net/work/people/droganova/CoreNLP.
 
+Note: That folder also contains a shell script for each CoNLL-U file. It illustrates
+how Kira processed the file. And the script can be submitted as a job to the cluster.
+There is also a script called "create_jobs.py" that generates all the shell scripts,
+including the script "enhance_them_all.sh", which submits the jobs to the cluster.
+
 
 
 2. Obtain the official release of Universal Dependencies.
@@ -69,6 +74,8 @@ We use embeddings that were prepared for CoNLL 2017 Shared Task:
 http://hdl.handle.net/11234/1-1989
 Download like this (22 GB):
 curl --remote-name-all https://lindat.mff.cuni.cz/repository/xmlui/bitstream/handle/11234/1-1989/word-embeddings-conll17.tar
+We have an unpacked copy of the embeddings here:
+/net/work/people/zeman/mrptask/sharedata/embeddings
 
 -relativePronouns is an obligatory parameter.
 For every language, we extract lists of relative pronouns relying on PronType feature (PronType=Rel; https://universaldependencies.org/u/feat/PronType.html#Rel).
