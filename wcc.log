@@ -1,0 +1,1215 @@
+for i in data/nodeps/UD_* ; do echo ; echo `basename $i` ; for j in $i/*.conllu ; do echo `basename $j` ; wc_conll.pl $j ; wc_conll.pl data/enhanced/`basename $i`/`basename $j` ; done ; done
+
+UD_Afrikaans-AfriBooms
+af_afribooms-ud-dev.conllu
+194 sentences, 5317 tokens
+194 sentences, 5317 tokens
+af_afribooms-ud-test.conllu
+425 sentences, 10065 tokens
+425 sentences, 10065 tokens
+af_afribooms-ud-train.conllu
+1315 sentences, 33894 tokens
+1315 sentences, 33894 tokens
+
+UD_Akkadian-PISANDUB
+akk_pisandub-ud-test.conllu
+101 sentences, 1852 tokens
+101 sentences, 1852 tokens
+
+UD_Amharic-ATT
+am_att-ud-test.conllu
+1074 sentences, 10010 tokens, 2672 fused tokens spanning 7437 nodes, i.e. 5245 total surface tokens
+1074 sentences, 10010 tokens, 2672 fused tokens spanning 7437 nodes, i.e. 5245 total surface tokens
+
+UD_Ancient_Greek-Perseus
+grc_perseus-ud-dev.conllu
+1137 sentences, 22135 tokens
+1137 sentences, 22135 tokens
+grc_perseus-ud-test.conllu
+1306 sentences, 20959 tokens
+1306 sentences, 20959 tokens
+grc_perseus-ud-train.conllu
+11476 sentences, 159895 tokens
+11476 sentences, 159895 tokens
+
+UD_Ancient_Greek-PROIEL
+grc_proiel-ud-dev.conllu
+1019 sentences, 13652 tokens
+1019 sentences, 13652 tokens, 37 empty nodes
+grc_proiel-ud-test.conllu
+1047 sentences, 13314 tokens
+1047 sentences, 13314 tokens, 36 empty nodes
+grc_proiel-ud-train.conllu
+15014 sentences, 187033 tokens
+10169 sentences, 123484 tokens, 377 empty nodes
+
+UD_Arabic-PADT
+ar_padt-ud-dev.conllu
+909 sentences, 30239 tokens, 4010 fused tokens spanning 8263 nodes, i.e. 25986 total surface tokens
+909 sentences, 30239 tokens, 4011 fused tokens spanning 8265 nodes, i.e. 25985 total surface tokens, 13 empty nodes
+ar_padt-ud-test.conllu
+680 sentences, 28264 tokens, 3864 fused tokens spanning 7927 nodes, i.e. 24201 total surface tokens
+680 sentences, 28264 tokens, 3864 fused tokens spanning 7927 nodes, i.e. 24201 total surface tokens, 7 empty nodes
+ar_padt-ud-train.conllu
+6075 sentences, 223881 tokens, 30459 fused tokens spanning 62471 nodes, i.e. 191869 total surface tokens
+6075 sentences, 223881 tokens, 30460 fused tokens spanning 62473 nodes, i.e. 191868 total surface tokens, 53 empty nodes
+
+UD_Arabic-PUD
+ar_pud-ud-test.conllu
+1000 sentences, 20751 tokens
+1000 sentences, 20751 tokens, 2 empty nodes
+
+UD_Armenian-ArmTDP
+hy_armtdp-ud-dev.conllu
+249 sentences, 5359 tokens, 11 fused tokens spanning 22 nodes, i.e. 5348 total surface tokens
+249 sentences, 5359 tokens, 11 fused tokens spanning 22 nodes, i.e. 5348 total surface tokens
+hy_armtdp-ud-test.conllu
+278 sentences, 5166 tokens, 86 fused tokens spanning 172 nodes, i.e. 5080 total surface tokens
+278 sentences, 5166 tokens, 86 fused tokens spanning 172 nodes, i.e. 5080 total surface tokens
+hy_armtdp-ud-train.conllu
+1975 sentences, 42105 tokens, 268 fused tokens spanning 536 nodes, i.e. 41837 total surface tokens
+1975 sentences, 42105 tokens, 268 fused tokens spanning 536 nodes, i.e. 41837 total surface tokens
+
+UD_Assyrian-AS
+aii_as-ud-test.conllu
+57 sentences, 453 tokens
+57 sentences, 453 tokens
+
+UD_Basque-BDT
+eu_bdt-ud-dev.conllu
+1798 sentences, 24095 tokens
+1798 sentences, 24095 tokens
+eu_bdt-ud-test.conllu
+1799 sentences, 24374 tokens
+1799 sentences, 24374 tokens
+eu_bdt-ud-train.conllu
+5396 sentences, 72974 tokens
+5396 sentences, 72974 tokens
+
+UD_Belarusian-HSE
+be_hse-ud-dev.conllu
+65 sentences, 1507 tokens
+65 sentences, 1507 tokens
+be_hse-ud-test.conllu
+253 sentences, 5435 tokens
+253 sentences, 5435 tokens
+be_hse-ud-train.conllu
+319 sentences, 6383 tokens
+319 sentences, 6383 tokens
+
+UD_Bhojpuri-BHTB
+bho_bhtb-ud-test.conllu
+254 sentences, 4881 tokens
+254 sentences, 4881 tokens
+
+UD_Breton-KEB
+br_keb-ud-test.conllu
+888 sentences, 10054 tokens, 294 fused tokens spanning 588 nodes, i.e. 9760 total surface tokens
+888 sentences, 10054 tokens, 294 fused tokens spanning 588 nodes, i.e. 9760 total surface tokens
+
+UD_Bulgarian-BTB
+bg_btb-ud-dev.conllu
+1115 sentences, 16089 tokens
+1115 sentences, 16089 tokens
+bg_btb-ud-test.conllu
+1116 sentences, 15724 tokens
+1116 sentences, 15724 tokens
+bg_btb-ud-train.conllu
+8907 sentences, 124336 tokens
+8907 sentences, 124336 tokens, 1 empty nodes
+
+UD_Buryat-BDT
+bxr_bdt-ud-test.conllu
+908 sentences, 10032 tokens
+908 sentences, 10032 tokens
+bxr_bdt-ud-train.conllu
+19 sentences, 153 tokens
+19 sentences, 153 tokens
+
+UD_Catalan-AnCora
+ca_ancora-ud-dev.conllu
+1709 sentences, 56482 tokens, 157 fused tokens spanning 318 nodes, i.e. 56321 total surface tokens
+1709 sentences, 56482 tokens, 157 fused tokens spanning 318 nodes, i.e. 56321 total surface tokens
+ca_ancora-ud-test.conllu
+1846 sentences, 57902 tokens, 115 fused tokens spanning 231 nodes, i.e. 57786 total surface tokens
+1846 sentences, 57902 tokens, 115 fused tokens spanning 231 nodes, i.e. 57786 total surface tokens
+ca_ancora-ud-train.conllu
+13123 sentences, 417587 tokens, 907 fused tokens spanning 1835 nodes, i.e. 416659 total surface tokens
+13123 sentences, 417587 tokens, 907 fused tokens spanning 1835 nodes, i.e. 416659 total surface tokens, 2 empty nodes
+
+UD_Classical_Chinese-Kyoto
+lzh_kyoto-ud-dev.conllu
+2038 sentences, 10094 tokens
+2038 sentences, 10094 tokens
+lzh_kyoto-ud-test.conllu
+2073 sentences, 10562 tokens
+2073 sentences, 10562 tokens
+lzh_kyoto-ud-train.conllu
+11004 sentences, 54114 tokens
+11004 sentences, 54114 tokens
+
+UD_Coptic-Scriptorium
+cop_scriptorium-ud-dev.conllu
+380 sentences, 10962 tokens, 3235 fused tokens spanning 9033 nodes, i.e. 5164 total surface tokens
+380 sentences, 10962 tokens, 3235 fused tokens spanning 9033 nodes, i.e. 5164 total surface tokens
+cop_scriptorium-ud-test.conllu
+403 sentences, 10371 tokens, 3099 fused tokens spanning 8576 nodes, i.e. 4894 total surface tokens
+403 sentences, 10371 tokens, 3099 fused tokens spanning 8576 nodes, i.e. 4894 total surface tokens
+cop_scriptorium-ud-train.conllu
+792 sentences, 18701 tokens, 5442 fused tokens spanning 15220 nodes, i.e. 8923 total surface tokens
+792 sentences, 18701 tokens, 5442 fused tokens spanning 15220 nodes, i.e. 8923 total surface tokens
+
+UD_Croatian-SET
+hr_set-ud-dev.conllu
+960 sentences, 22292 tokens
+960 sentences, 22292 tokens, 25 empty nodes
+hr_set-ud-test.conllu
+1136 sentences, 24260 tokens
+1136 sentences, 24260 tokens, 11 empty nodes
+hr_set-ud-train.conllu
+6914 sentences, 152857 tokens
+6914 sentences, 152857 tokens, 92 empty nodes
+
+UD_Czech-CAC
+cs_cac-ud-dev.conllu
+603 sentences, 10912 tokens, 24 fused tokens spanning 48 nodes, i.e. 10888 total surface tokens
+603 sentences, 10912 tokens, 24 fused tokens spanning 48 nodes, i.e. 10888 total surface tokens, 16 empty nodes
+cs_cac-ud-test.conllu
+628 sentences, 10862 tokens, 38 fused tokens spanning 76 nodes, i.e. 10824 total surface tokens
+628 sentences, 10862 tokens, 38 fused tokens spanning 76 nodes, i.e. 10824 total surface tokens, 22 empty nodes
+cs_cac-ud-train.conllu
+23478 sentences, 472609 tokens, 1015 fused tokens spanning 2030 nodes, i.e. 471594 total surface tokens
+23478 sentences, 472609 tokens, 1015 fused tokens spanning 2030 nodes, i.e. 471594 total surface tokens, 1099 empty nodes
+
+UD_Czech-CLTT
+cs_cltt-ud-dev.conllu
+129 sentences, 4773 tokens, 7 fused tokens spanning 20 nodes, i.e. 4760 total surface tokens
+129 sentences, 4773 tokens, 7 fused tokens spanning 20 nodes, i.e. 4760 total surface tokens, 2 empty nodes
+cs_cltt-ud-test.conllu
+136 sentences, 4115 tokens, 11 fused tokens spanning 27 nodes, i.e. 4099 total surface tokens
+136 sentences, 4115 tokens, 11 fused tokens spanning 27 nodes, i.e. 4099 total surface tokens, 2 empty nodes
+cs_cltt-ud-train.conllu
+860 sentences, 26742 tokens, 263 fused tokens spanning 780 nodes, i.e. 26225 total surface tokens
+860 sentences, 26742 tokens, 263 fused tokens spanning 780 nodes, i.e. 26225 total surface tokens, 11 empty nodes
+
+UD_Czech-FicTree
+cs_fictree-ud-dev.conllu
+1309 sentences, 16714 tokens, 62 fused tokens spanning 124 nodes, i.e. 16652 total surface tokens
+1309 sentences, 16714 tokens, 62 fused tokens spanning 124 nodes, i.e. 16652 total surface tokens, 25 empty nodes
+cs_fictree-ud-test.conllu
+1291 sentences, 16705 tokens, 62 fused tokens spanning 124 nodes, i.e. 16643 total surface tokens
+1291 sentences, 16705 tokens, 62 fused tokens spanning 124 nodes, i.e. 16643 total surface tokens, 17 empty nodes
+cs_fictree-ud-train.conllu
+10160 sentences, 133637 tokens, 500 fused tokens spanning 1000 nodes, i.e. 133137 total surface tokens
+474 sentences, 6710 tokens, 22 fused tokens spanning 44 nodes, i.e. 6688 total surface tokens, 16 empty nodes
+
+UD_Czech-PDT
+cs_pdt-ud-dev.conllu
+9270 sentences, 159284 tokens, 326 fused tokens spanning 652 nodes, i.e. 158958 total surface tokens
+9270 sentences, 159284 tokens, 326 fused tokens spanning 652 nodes, i.e. 158958 total surface tokens, 251 empty nodes
+cs_pdt-ud-test.conllu
+10148 sentences, 173918 tokens, 334 fused tokens spanning 668 nodes, i.e. 173584 total surface tokens
+10148 sentences, 173918 tokens, 334 fused tokens spanning 668 nodes, i.e. 173584 total surface tokens, 235 empty nodes
+cs_pdt-ud-train.conllu
+68495 sentences, 1173282 tokens, 2092 fused tokens spanning 4184 nodes, i.e. 1171190 total surface tokens
+68495 sentences, 1173282 tokens, 2093 fused tokens spanning 4186 nodes, i.e. 1171189 total surface tokens, 1824 empty nodes
+
+UD_Czech-PUD
+cs_pud-ud-test.conllu
+1000 sentences, 18610 tokens, 45 fused tokens spanning 90 nodes, i.e. 18565 total surface tokens
+1000 sentences, 18610 tokens, 45 fused tokens spanning 90 nodes, i.e. 18565 total surface tokens, 13 empty nodes
+
+UD_Danish-DDT
+da_ddt-ud-dev.conllu
+564 sentences, 10332 tokens
+564 sentences, 10332 tokens
+da_ddt-ud-test.conllu
+565 sentences, 10023 tokens
+565 sentences, 10023 tokens
+da_ddt-ud-train.conllu
+4383 sentences, 80378 tokens
+4383 sentences, 80378 tokens
+
+UD_Dutch-Alpino
+nl_alpino-ud-dev.conllu
+718 sentences, 11541 tokens, 8 empty nodes
+718 sentences, 11541 tokens, 1 empty nodes
+nl_alpino-ud-test.conllu
+596 sentences, 11046 tokens, 7 empty nodes
+596 sentences, 11046 tokens, 2 empty nodes
+nl_alpino-ud-train.conllu
+12264 sentences, 185883 tokens, 116 empty nodes
+1713 sentences, 33934 tokens, 14 empty nodes
+
+UD_Dutch-LassySmall
+nl_lassysmall-ud-dev.conllu
+676 sentences, 11397 tokens, 20 empty nodes
+676 sentences, 11397 tokens, 8 empty nodes
+nl_lassysmall-ud-test.conllu
+875 sentences, 11556 tokens, 25 empty nodes
+875 sentences, 11556 tokens, 8 empty nodes
+nl_lassysmall-ud-train.conllu
+5787 sentences, 75080 tokens, 85 empty nodes
+5787 sentences, 75080 tokens, 24 empty nodes
+
+UD_English-EWT
+en_ewt-ud-dev.conllu
+2002 sentences, 25148 tokens, 2 empty nodes
+2002 sentences, 25148 tokens
+en_ewt-ud-test.conllu
+2077 sentences, 25096 tokens, 1 empty nodes
+2077 sentences, 25096 tokens, 1 empty nodes
+en_ewt-ud-train.conllu
+12543 sentences, 204585 tokens, 24 empty nodes
+12543 sentences, 204585 tokens, 24 empty nodes
+
+UD_English-GUM
+en_gum-ud-dev.conllu
+784 sentences, 15593 tokens
+784 sentences, 15593 tokens
+en_gum-ud-test.conllu
+890 sentences, 15924 tokens
+890 sentences, 15924 tokens
+en_gum-ud-train.conllu
+3753 sentences, 69760 tokens
+3753 sentences, 69760 tokens, 3 empty nodes
+
+UD_English-LinES
+en_lines-ud-dev.conllu
+1032 sentences, 19170 tokens
+1032 sentences, 19170 tokens
+en_lines-ud-test.conllu
+1035 sentences, 17675 tokens
+1035 sentences, 17675 tokens, 2 empty nodes
+en_lines-ud-train.conllu
+3176 sentences, 57372 tokens
+3176 sentences, 57372 tokens, 1 empty nodes
+
+UD_English-ParTUT
+en_partut-ud-dev.conllu
+156 sentences, 2722 tokens, 1 fused tokens spanning 2 nodes, i.e. 2721 total surface tokens
+156 sentences, 2722 tokens, 1 fused tokens spanning 2 nodes, i.e. 2721 total surface tokens
+en_partut-ud-test.conllu
+153 sentences, 3408 tokens, 4 fused tokens spanning 8 nodes, i.e. 3404 total surface tokens
+153 sentences, 3408 tokens, 4 fused tokens spanning 8 nodes, i.e. 3404 total surface tokens
+en_partut-ud-train.conllu
+1781 sentences, 43504 tokens, 27 fused tokens spanning 54 nodes, i.e. 43477 total surface tokens
+1781 sentences, 43504 tokens, 27 fused tokens spanning 54 nodes, i.e. 43477 total surface tokens, 18 empty nodes
+
+UD_English-Pronouns
+en_pronouns-ud-test.conllu
+285 sentences, 1695 tokens
+285 sentences, 1695 tokens, 15 empty nodes
+
+UD_English-PUD
+en_pud-ud-test.conllu
+1000 sentences, 21176 tokens, 7 empty nodes
+1000 sentences, 21176 tokens, 7 empty nodes
+
+UD_Erzya-JR
+myv_jr-ud-test.conllu
+1550 sentences, 15790 tokens, 176 fused tokens spanning 373 nodes, i.e. 15593 total surface tokens
+1550 sentences, 15790 tokens, 176 fused tokens spanning 373 nodes, i.e. 15593 total surface tokens
+
+UD_Estonian-EDT
+et_edt-ud-dev.conllu
+3125 sentences, 44632 tokens
+3125 sentences, 44632 tokens, 53 empty nodes
+et_edt-ud-test.conllu
+3214 sentences, 48491 tokens
+3214 sentences, 48491 tokens, 31 empty nodes
+et_edt-ud-train.conllu
+24633 sentences, 344646 tokens
+24633 sentences, 344646 tokens, 324 empty nodes
+
+UD_Estonian-EWT
+et_ewt-ud-test.conllu
+546 sentences, 10088 tokens, 17 empty nodes
+546 sentences, 10088 tokens, 14 empty nodes
+et_ewt-ud-train.conllu
+1116 sentences, 17158 tokens, 23 empty nodes
+1116 sentences, 17158 tokens, 21 empty nodes
+
+UD_Faroese-OFT
+fo_oft-ud-test.conllu
+1208 sentences, 10002 tokens
+1208 sentences, 10002 tokens
+
+UD_Finnish-FTB
+fi_ftb-ud-dev.conllu
+1875 sentences, 15724 tokens, 30 fused tokens spanning 60 nodes, i.e. 15694 total surface tokens
+1875 sentences, 15724 tokens, 30 fused tokens spanning 60 nodes, i.e. 15694 total surface tokens
+fi_ftb-ud-test.conllu
+1867 sentences, 16286 tokens, 25 fused tokens spanning 50 nodes, i.e. 16261 total surface tokens
+1867 sentences, 16286 tokens, 25 fused tokens spanning 50 nodes, i.e. 16261 total surface tokens
+fi_ftb-ud-train.conllu
+14981 sentences, 127602 tokens, 243 fused tokens spanning 486 nodes, i.e. 127359 total surface tokens
+14981 sentences, 127602 tokens, 243 fused tokens spanning 486 nodes, i.e. 127359 total surface tokens
+
+UD_Finnish-PUD
+fi_pud-ud-test.conllu
+1000 sentences, 15813 tokens, 6 fused tokens spanning 12 nodes, i.e. 15807 total surface tokens, 4 empty nodes
+1000 sentences, 15813 tokens, 6 fused tokens spanning 12 nodes, i.e. 15807 total surface tokens, 5 empty nodes
+
+UD_Finnish-TDT
+fi_tdt-ud-dev.conllu
+1364 sentences, 18308 tokens, 18 fused tokens spanning 36 nodes, i.e. 18290 total surface tokens, 22 empty nodes
+1364 sentences, 18308 tokens, 18 fused tokens spanning 36 nodes, i.e. 18290 total surface tokens, 19 empty nodes
+fi_tdt-ud-test.conllu
+1555 sentences, 21070 tokens, 27 fused tokens spanning 54 nodes, i.e. 21043 total surface tokens, 29 empty nodes
+1555 sentences, 21070 tokens, 27 fused tokens spanning 54 nodes, i.e. 21043 total surface tokens, 19 empty nodes
+fi_tdt-ud-train.conllu
+12217 sentences, 162816 tokens, 199 fused tokens spanning 398 nodes, i.e. 162617 total surface tokens, 208 empty nodes
+12217 sentences, 162816 tokens, 199 fused tokens spanning 398 nodes, i.e. 162617 total surface tokens, 124 empty nodes
+
+UD_French-FQB
+fr_fqb-ud-test.conllu
+2289 sentences, 24135 tokens, 552 fused tokens spanning 1104 nodes, i.e. 23583 total surface tokens
+2289 sentences, 24135 tokens, 552 fused tokens spanning 1104 nodes, i.e. 23583 total surface tokens, 1 empty nodes
+
+UD_French-GSD
+fr_gsd-ud-dev.conllu
+1476 sentences, 35716 tokens, 1057 fused tokens spanning 2114 nodes, i.e. 34659 total surface tokens
+1476 sentences, 35716 tokens, 1057 fused tokens spanning 2114 nodes, i.e. 34659 total surface tokens, 13 empty nodes
+fr_gsd-ud-test.conllu
+416 sentences, 10019 tokens, 279 fused tokens spanning 558 nodes, i.e. 9740 total surface tokens
+416 sentences, 10019 tokens, 279 fused tokens spanning 558 nodes, i.e. 9740 total surface tokens, 3 empty nodes
+fr_gsd-ud-train.conllu
+14450 sentences, 354661 tokens, 9689 fused tokens spanning 19378 nodes, i.e. 344972 total surface tokens
+14158 sentences, 347421 tokens, 9470 fused tokens spanning 18940 nodes, i.e. 337951 total surface tokens, 110 empty nodes
+
+UD_French-ParTUT
+fr_partut-ud-dev.conllu
+107 sentences, 1870 tokens, 48 fused tokens spanning 96 nodes, i.e. 1822 total surface tokens
+107 sentences, 1870 tokens, 48 fused tokens spanning 96 nodes, i.e. 1822 total surface tokens, 2 empty nodes
+fr_partut-ud-test.conllu
+110 sentences, 2603 tokens, 89 fused tokens spanning 178 nodes, i.e. 2514 total surface tokens
+110 sentences, 2603 tokens, 89 fused tokens spanning 178 nodes, i.e. 2514 total surface tokens
+fr_partut-ud-train.conllu
+803 sentences, 24122 tokens, 800 fused tokens spanning 1600 nodes, i.e. 23322 total surface tokens
+803 sentences, 24122 tokens, 800 fused tokens spanning 1600 nodes, i.e. 23322 total surface tokens, 2 empty nodes
+
+UD_French-Sequoia
+fr_sequoia-ud-dev.conllu
+412 sentences, 10002 tokens, 282 fused tokens spanning 564 nodes, i.e. 9720 total surface tokens
+412 sentences, 10002 tokens, 282 fused tokens spanning 564 nodes, i.e. 9720 total surface tokens, 3 empty nodes
+fr_sequoia-ud-test.conllu
+456 sentences, 10048 tokens, 310 fused tokens spanning 620 nodes, i.e. 9738 total surface tokens
+456 sentences, 10048 tokens, 310 fused tokens spanning 620 nodes, i.e. 9738 total surface tokens, 2 empty nodes
+fr_sequoia-ud-train.conllu
+2231 sentences, 50517 tokens, 1360 fused tokens spanning 2720 nodes, i.e. 49157 total surface tokens
+2231 sentences, 50517 tokens, 1360 fused tokens spanning 2720 nodes, i.e. 49157 total surface tokens, 28 empty nodes
+
+UD_French-Spoken
+fr_spoken-ud-dev.conllu
+907 sentences, 10080 tokens, 148 fused tokens spanning 296 nodes, i.e. 9932 total surface tokens
+907 sentences, 10080 tokens, 148 fused tokens spanning 296 nodes, i.e. 9932 total surface tokens, 1 empty nodes
+fr_spoken-ud-test.conllu
+726 sentences, 10029 tokens, 134 fused tokens spanning 268 nodes, i.e. 9895 total surface tokens
+726 sentences, 10029 tokens, 134 fused tokens spanning 268 nodes, i.e. 9895 total surface tokens
+fr_spoken-ud-train.conllu
+1156 sentences, 15264 tokens, 251 fused tokens spanning 502 nodes, i.e. 15013 total surface tokens
+1156 sentences, 15264 tokens, 251 fused tokens spanning 502 nodes, i.e. 15013 total surface tokens
+
+UD_Galician-CTG
+gl_ctg-ud-dev.conllu
+860 sentences, 29772 tokens, 2749 fused tokens spanning 5512 nodes, i.e. 27009 total surface tokens
+860 sentences, 29772 tokens, 2749 fused tokens spanning 5512 nodes, i.e. 27009 total surface tokens
+gl_ctg-ud-test.conllu
+861 sentences, 29738 tokens, 2652 fused tokens spanning 5316 nodes, i.e. 27074 total surface tokens
+861 sentences, 29738 tokens, 2652 fused tokens spanning 5316 nodes, i.e. 27074 total surface tokens
+gl_ctg-ud-train.conllu
+2272 sentences, 79327 tokens, 7349 fused tokens spanning 14748 nodes, i.e. 71928 total surface tokens
+2272 sentences, 79327 tokens, 7349 fused tokens spanning 14748 nodes, i.e. 71928 total surface tokens
+
+UD_Galician-TreeGal
+gl_treegal-ud-test.conllu
+400 sentences, 10112 tokens, 788 fused tokens spanning 1579 nodes, i.e. 9321 total surface tokens
+400 sentences, 10112 tokens, 788 fused tokens spanning 1579 nodes, i.e. 9321 total surface tokens
+gl_treegal-ud-train.conllu
+600 sentences, 15436 tokens, 1271 fused tokens spanning 2549 nodes, i.e. 14158 total surface tokens
+600 sentences, 15436 tokens, 1272 fused tokens spanning 2551 nodes, i.e. 14157 total surface tokens, 1 empty nodes
+
+UD_German-GSD
+de_gsd-ud-dev.conllu
+799 sentences, 12486 tokens, 164 fused tokens spanning 328 nodes, i.e. 12322 total surface tokens
+ sentences,  tokens
+de_gsd-ud-test.conllu
+977 sentences, 16498 tokens, 274 fused tokens spanning 548 nodes, i.e. 16224 total surface tokens
+ sentences,  tokens
+de_gsd-ud-train.conllu
+13814 sentences, 263804 tokens, 4610 fused tokens spanning 9220 nodes, i.e. 259194 total surface tokens
+ sentences,  tokens
+
+UD_German-HDT
+de_hdt-ud-dev.conllu
+18434 sentences, 319513 tokens
+ sentences,  tokens
+de_hdt-ud-test.conllu
+18459 sentences, 326250 tokens
+ sentences,  tokens
+de_hdt-ud-train.conllu
+153035 sentences, 2753627 tokens
+ sentences,  tokens
+
+UD_German-LIT
+de_lit-ud-test.conllu
+1922 sentences, 40440 tokens, 105 fused tokens spanning 210 nodes, i.e. 40335 total surface tokens
+ sentences,  tokens
+
+UD_German-PUD
+de_pud-ud-test.conllu
+1000 sentences, 21329 tokens, 328 fused tokens spanning 656 nodes, i.e. 21001 total surface tokens
+ sentences,  tokens
+
+UD_Gothic-PROIEL
+got_proiel-ud-dev.conllu
+985 sentences, 10114 tokens
+985 sentences, 10114 tokens
+got_proiel-ud-test.conllu
+1029 sentences, 10198 tokens
+1029 sentences, 10198 tokens
+got_proiel-ud-train.conllu
+3387 sentences, 35024 tokens
+3387 sentences, 35024 tokens
+
+UD_Greek-GDT
+el_gdt-ud-dev.conllu
+403 sentences, 10443 tokens, 304 fused tokens spanning 608 nodes, i.e. 10139 total surface tokens
+403 sentences, 10443 tokens, 304 fused tokens spanning 608 nodes, i.e. 10139 total surface tokens, 6 empty nodes
+el_gdt-ud-test.conllu
+456 sentences, 10672 tokens, 250 fused tokens spanning 500 nodes, i.e. 10422 total surface tokens
+456 sentences, 10672 tokens, 250 fused tokens spanning 500 nodes, i.e. 10422 total surface tokens, 4 empty nodes
+el_gdt-ud-train.conllu
+1662 sentences, 42326 tokens, 1114 fused tokens spanning 2228 nodes, i.e. 41212 total surface tokens
+1662 sentences, 42326 tokens, 1114 fused tokens spanning 2228 nodes, i.e. 41212 total surface tokens, 22 empty nodes
+
+UD_Hebrew-HTB
+he_htb-ud-dev.conllu
+484 sentences, 11412 tokens, 2502 fused tokens spanning 5556 nodes, i.e. 8358 total surface tokens
+484 sentences, 11412 tokens, 2502 fused tokens spanning 5556 nodes, i.e. 8358 total surface tokens
+he_htb-ud-test.conllu
+491 sentences, 12284 tokens, 2853 fused tokens spanning 6308 nodes, i.e. 8829 total surface tokens
+491 sentences, 12284 tokens, 2853 fused tokens spanning 6308 nodes, i.e. 8829 total surface tokens
+he_htb-ud-train.conllu
+5241 sentences, 137721 tokens, 31680 fused tokens spanning 71053 nodes, i.e. 98348 total surface tokens
+5241 sentences, 137721 tokens, 31680 fused tokens spanning 71053 nodes, i.e. 98348 total surface tokens
+
+UD_Hindi-HDTB
+hi_hdtb-ud-dev.conllu
+1659 sentences, 35217 tokens
+1659 sentences, 35217 tokens
+hi_hdtb-ud-test.conllu
+1684 sentences, 35430 tokens
+1684 sentences, 35430 tokens
+hi_hdtb-ud-train.conllu
+13304 sentences, 281057 tokens
+13304 sentences, 281057 tokens
+
+UD_Hungarian-Szeged
+hu_szeged-ud-dev.conllu
+441 sentences, 11418 tokens
+441 sentences, 11418 tokens, 6 empty nodes
+hu_szeged-ud-test.conllu
+449 sentences, 10448 tokens
+449 sentences, 10448 tokens, 11 empty nodes
+hu_szeged-ud-train.conllu
+910 sentences, 20166 tokens
+910 sentences, 20166 tokens, 13 empty nodes
+
+UD_Chinese-CFL
+zh_cfl-ud-test.conllu
+451 sentences, 7256 tokens
+451 sentences, 7256 tokens
+
+UD_Chinese-GSD
+zh_gsd-ud-dev.conllu
+500 sentences, 12663 tokens
+500 sentences, 12663 tokens, 2 empty nodes
+zh_gsd-ud-test.conllu
+500 sentences, 12012 tokens
+500 sentences, 12012 tokens
+zh_gsd-ud-train.conllu
+3997 sentences, 98616 tokens
+3997 sentences, 98616 tokens
+
+UD_Chinese-GSDSimp
+zh_gsdsimp-ud-dev.conllu
+500 sentences, 12663 tokens
+500 sentences, 12663 tokens, 2 empty nodes
+zh_gsdsimp-ud-test.conllu
+500 sentences, 12012 tokens
+500 sentences, 12012 tokens
+zh_gsdsimp-ud-train.conllu
+3997 sentences, 98616 tokens
+3997 sentences, 98616 tokens
+
+UD_Indonesian-GSD
+id_gsd-ud-dev.conllu
+559 sentences, 12612 tokens
+559 sentences, 12612 tokens
+id_gsd-ud-test.conllu
+557 sentences, 11780 tokens
+557 sentences, 11780 tokens
+id_gsd-ud-train.conllu
+4477 sentences, 97531 tokens
+4477 sentences, 97531 tokens
+
+UD_Irish-IDT
+ga_idt-ud-dev.conllu
+451 sentences, 10000 tokens
+ sentences,  tokens
+ga_idt-ud-test.conllu
+454 sentences, 10138 tokens
+ sentences,  tokens
+ga_idt-ud-train.conllu
+858 sentences, 20434 tokens
+ sentences,  tokens
+
+UD_Italian-ISDT
+it_isdt-ud-dev.conllu
+564 sentences, 11908 tokens, 775 fused tokens spanning 1550 nodes, i.e. 11133 total surface tokens
+564 sentences, 11908 tokens, 776 fused tokens spanning 1552 nodes, i.e. 11132 total surface tokens, 2 empty nodes
+it_isdt-ud-test.conllu
+482 sentences, 10417 tokens, 736 fused tokens spanning 1473 nodes, i.e. 9680 total surface tokens
+482 sentences, 10417 tokens, 736 fused tokens spanning 1473 nodes, i.e. 9680 total surface tokens, 1 empty nodes
+it_isdt-ud-train.conllu
+13121 sentences, 276018 tokens, 18377 fused tokens spanning 36779 nodes, i.e. 257616 total surface tokens
+13121 sentences, 276018 tokens, 18377 fused tokens spanning 36779 nodes, i.e. 257616 total surface tokens, 43 empty nodes
+
+UD_Italian-ParTUT
+it_partut-ud-dev.conllu
+156 sentences, 2984 tokens, 198 fused tokens spanning 396 nodes, i.e. 2786 total surface tokens
+156 sentences, 2984 tokens, 198 fused tokens spanning 396 nodes, i.e. 2786 total surface tokens
+it_partut-ud-test.conllu
+153 sentences, 3640 tokens, 289 fused tokens spanning 578 nodes, i.e. 3351 total surface tokens
+153 sentences, 3640 tokens, 289 fused tokens spanning 578 nodes, i.e. 3351 total surface tokens
+it_partut-ud-train.conllu
+1781 sentences, 48934 tokens, 3456 fused tokens spanning 6913 nodes, i.e. 45477 total surface tokens
+1781 sentences, 48934 tokens, 3456 fused tokens spanning 6913 nodes, i.e. 45477 total surface tokens, 9 empty nodes
+
+UD_Italian-PoSTWITA
+it_postwita-ud-dev.conllu
+671 sentences, 12335 tokens, 481 fused tokens spanning 966 nodes, i.e. 11850 total surface tokens
+671 sentences, 12335 tokens, 481 fused tokens spanning 966 nodes, i.e. 11850 total surface tokens, 9 empty nodes
+it_postwita-ud-test.conllu
+674 sentences, 12668 tokens, 551 fused tokens spanning 1105 nodes, i.e. 12114 total surface tokens
+674 sentences, 12668 tokens, 551 fused tokens spanning 1105 nodes, i.e. 12114 total surface tokens, 4 empty nodes
+it_postwita-ud-train.conllu
+5368 sentences, 99442 tokens, 4113 fused tokens spanning 8247 nodes, i.e. 95308 total surface tokens
+5368 sentences, 99442 tokens, 4114 fused tokens spanning 8249 nodes, i.e. 95307 total surface tokens, 36 empty nodes
+
+UD_Italian-PUD
+it_pud-ud-test.conllu
+1000 sentences, 23731 tokens, 1547 fused tokens spanning 3096 nodes, i.e. 22182 total surface tokens
+1000 sentences, 23731 tokens, 1547 fused tokens spanning 3096 nodes, i.e. 22182 total surface tokens, 4 empty nodes
+
+UD_Italian-TWITTIRO
+it_twittiro-ud-dev.conllu
+144 sentences, 2995 tokens, 137 fused tokens spanning 277 nodes, i.e. 2855 total surface tokens
+144 sentences, 2995 tokens, 137 fused tokens spanning 277 nodes, i.e. 2855 total surface tokens
+it_twittiro-ud-test.conllu
+142 sentences, 2976 tokens, 100 fused tokens spanning 200 nodes, i.e. 2876 total surface tokens
+142 sentences, 2976 tokens, 100 fused tokens spanning 200 nodes, i.e. 2876 total surface tokens, 2 empty nodes
+it_twittiro-ud-train.conllu
+1138 sentences, 23634 tokens, 976 fused tokens spanning 1954 nodes, i.e. 22656 total surface tokens
+1138 sentences, 23634 tokens, 976 fused tokens spanning 1954 nodes, i.e. 22656 total surface tokens, 10 empty nodes
+
+UD_Italian-VIT
+it_vit-ud-dev.conllu
+743 sentences, 28569 tokens, 2548 fused tokens spanning 5096 nodes, i.e. 26021 total surface tokens
+743 sentences, 28569 tokens, 2548 fused tokens spanning 5096 nodes, i.e. 26021 total surface tokens
+it_vit-ud-test.conllu
+1067 sentences, 26370 tokens, 1615 fused tokens spanning 3233 nodes, i.e. 24752 total surface tokens
+1067 sentences, 26370 tokens, 1615 fused tokens spanning 3233 nodes, i.e. 24752 total surface tokens
+it_vit-ud-train.conllu
+8277 sentences, 224901 tokens, 16096 fused tokens spanning 32197 nodes, i.e. 208800 total surface tokens
+8277 sentences, 224901 tokens, 16096 fused tokens spanning 32197 nodes, i.e. 208800 total surface tokens, 3 empty nodes
+
+UD_Japanese-GSD
+ja_gsd-ud-dev.conllu
+511 sentences, 11477 tokens
+511 sentences, 11477 tokens
+ja_gsd-ud-test.conllu
+550 sentences, 12391 tokens
+550 sentences, 12391 tokens
+ja_gsd-ud-train.conllu
+7125 sentences, 160204 tokens
+7125 sentences, 160204 tokens
+
+UD_Japanese-Modern
+ja_modern-ud-test.conllu
+822 sentences, 14494 tokens
+822 sentences, 14494 tokens
+
+UD_Japanese-PUD
+ja_pud-ud-test.conllu
+1000 sentences, 26707 tokens
+1000 sentences, 26707 tokens
+
+UD_Karelian-KKPP
+krl_kkpp-ud-test.conllu
+228 sentences, 3094 tokens
+228 sentences, 3094 tokens
+
+UD_Kazakh-KTB
+kk_ktb-ud-test.conllu
+1047 sentences, 10007 tokens, 135 fused tokens spanning 270 nodes, i.e. 9872 total surface tokens
+1047 sentences, 10007 tokens, 135 fused tokens spanning 270 nodes, i.e. 9872 total surface tokens, 2 empty nodes
+kk_ktb-ud-train.conllu
+31 sentences, 529 tokens, 18 fused tokens spanning 36 nodes, i.e. 511 total surface tokens
+31 sentences, 529 tokens, 18 fused tokens spanning 36 nodes, i.e. 511 total surface tokens
+
+UD_Komi_Permyak-UH
+koi_uh-ud-test.conllu
+49 sentences, 399 tokens
+49 sentences, 399 tokens
+
+UD_Komi_Zyrian-IKDP
+kpv_ikdp-ud-test.conllu
+117 sentences, 1287 tokens
+117 sentences, 1287 tokens
+
+UD_Komi_Zyrian-Lattice
+kpv_lattice-ud-test.conllu
+210 sentences, 2176 tokens
+210 sentences, 2176 tokens
+
+UD_Korean-GSD
+ko_gsd-ud-dev.conllu
+950 sentences, 11958 tokens
+950 sentences, 11958 tokens
+ko_gsd-ud-test.conllu
+989 sentences, 11677 tokens
+989 sentences, 11677 tokens
+ko_gsd-ud-train.conllu
+4400 sentences, 56687 tokens
+4400 sentences, 56687 tokens
+
+UD_Korean-Kaist
+ko_kaist-ud-dev.conllu
+2066 sentences, 25278 tokens
+2066 sentences, 25278 tokens
+ko_kaist-ud-test.conllu
+2287 sentences, 28366 tokens
+2287 sentences, 28366 tokens
+ko_kaist-ud-train.conllu
+23010 sentences, 296446 tokens
+23010 sentences, 296446 tokens
+
+UD_Kurmanji-MG
+kmr_mg-ud-test.conllu
+734 sentences, 10018 tokens, 72 fused tokens spanning 144 nodes, i.e. 9946 total surface tokens
+734 sentences, 10018 tokens, 72 fused tokens spanning 144 nodes, i.e. 9946 total surface tokens, 1 empty nodes
+kmr_mg-ud-train.conllu
+20 sentences, 242 tokens
+20 sentences, 242 tokens
+
+UD_Latin-ITTB
+la_ittb-ud-dev.conllu
+2101 sentences, 29888 tokens
+495 sentences, 7718 tokens, 9 empty nodes
+la_ittb-ud-test.conllu
+2101 sentences, 29842 tokens
+2101 sentences, 29842 tokens, 86 empty nodes
+la_ittb-ud-train.conllu
+16809 sentences, 293305 tokens
+4314 sentences, 67962 tokens, 231 empty nodes
+
+UD_Latin-Perseus
+la_perseus-ud-test.conllu
+939 sentences, 10954 tokens
+939 sentences, 10954 tokens
+la_perseus-ud-train.conllu
+1334 sentences, 18184 tokens
+1334 sentences, 18184 tokens
+
+UD_Latin-PROIEL
+la_proiel-ud-dev.conllu
+1234 sentences, 13939 tokens
+1234 sentences, 13939 tokens, 21 empty nodes
+la_proiel-ud-test.conllu
+1260 sentences, 14091 tokens
+1260 sentences, 14091 tokens, 28 empty nodes
+la_proiel-ud-train.conllu
+15917 sentences, 172133 tokens
+896 sentences, 7449 tokens, 18 empty nodes
+
+UD_Latvian-LVTB
+lv_lvtb-ud-dev.conllu
+1664 sentences, 25965 tokens, 95 empty nodes
+167 sentences, 2508 tokens
+lv_lvtb-ud-test.conllu
+1823 sentences, 26396 tokens, 137 empty nodes
+148 sentences, 1633 tokens
+lv_lvtb-ud-train.conllu
+10156 sentences, 167594 tokens, 349 empty nodes
+55 sentences, 897 tokens
+
+UD_Lithuanian-ALKSNIS
+lt_alksnis-ud-dev.conllu
+617 sentences, 11560 tokens
+617 sentences, 11560 tokens
+lt_alksnis-ud-test.conllu
+684 sentences, 10846 tokens
+684 sentences, 10846 tokens
+lt_alksnis-ud-train.conllu
+2341 sentences, 47641 tokens
+2341 sentences, 47641 tokens
+
+UD_Lithuanian-HSE
+lt_hse-ud-dev.conllu
+55 sentences, 1086 tokens
+55 sentences, 1086 tokens
+lt_hse-ud-test.conllu
+55 sentences, 1060 tokens
+55 sentences, 1060 tokens
+lt_hse-ud-train.conllu
+153 sentences, 3210 tokens
+153 sentences, 3210 tokens
+
+UD_Livvi-KKPP
+olo_kkpp-ud-test.conllu
+106 sentences, 1488 tokens
+106 sentences, 1488 tokens
+olo_kkpp-ud-train.conllu
+19 sentences, 144 tokens
+19 sentences, 144 tokens
+
+UD_Marathi-UFAL
+mr_ufal-ud-dev.conllu
+46 sentences, 440 tokens, 39 fused tokens spanning 79 nodes, i.e. 400 total surface tokens
+46 sentences, 440 tokens, 39 fused tokens spanning 79 nodes, i.e. 400 total surface tokens
+mr_ufal-ud-test.conllu
+47 sentences, 412 tokens, 36 fused tokens spanning 72 nodes, i.e. 376 total surface tokens
+47 sentences, 412 tokens, 36 fused tokens spanning 72 nodes, i.e. 376 total surface tokens
+mr_ufal-ud-train.conllu
+373 sentences, 2997 tokens, 256 fused tokens spanning 523 nodes, i.e. 2730 total surface tokens
+373 sentences, 2997 tokens, 256 fused tokens spanning 523 nodes, i.e. 2730 total surface tokens
+
+UD_Mbya_Guarani-Thomas
+gun_thomas-ud-test.conllu
+98 sentences, 1318 tokens
+98 sentences, 1318 tokens
+
+UD_Moksha-JR
+mdf_jr-ud-test.conllu
+65 sentences, 561 tokens, 1 fused tokens spanning 2 nodes, i.e. 560 total surface tokens
+65 sentences, 561 tokens, 1 fused tokens spanning 2 nodes, i.e. 560 total surface tokens
+
+UD_Naija-NSC
+pcm_nsc-ud-test.conllu
+948 sentences, 12863 tokens
+948 sentences, 12863 tokens
+
+UD_North_Sami-Giella
+sme_giella-ud-test.conllu
+865 sentences, 10010 tokens
+865 sentences, 10010 tokens
+sme_giella-ud-train.conllu
+2257 sentences, 16835 tokens
+2257 sentences, 16835 tokens
+
+UD_Norwegian-Bokmaal
+no_bokmaal-ud-dev.conllu
+2409 sentences, 36369 tokens
+2409 sentences, 36369 tokens, 27 empty nodes
+no_bokmaal-ud-test.conllu
+1939 sentences, 29966 tokens
+1939 sentences, 29966 tokens, 26 empty nodes
+no_bokmaal-ud-train.conllu
+15696 sentences, 243886 tokens
+15696 sentences, 243886 tokens, 170 empty nodes
+
+UD_Norwegian-Nynorsk
+no_nynorsk-ud-dev.conllu
+1890 sentences, 31250 tokens
+1890 sentences, 31250 tokens, 23 empty nodes
+no_nynorsk-ud-test.conllu
+1511 sentences, 24773 tokens
+1511 sentences, 24773 tokens, 16 empty nodes
+no_nynorsk-ud-train.conllu
+14174 sentences, 245330 tokens
+14174 sentences, 245330 tokens, 204 empty nodes
+
+UD_Norwegian-NynorskLIA
+no_nynorsklia-ud-dev.conllu
+881 sentences, 10163 tokens
+881 sentences, 10163 tokens
+no_nynorsklia-ud-test.conllu
+957 sentences, 10040 tokens
+957 sentences, 10040 tokens
+no_nynorsklia-ud-train.conllu
+3412 sentences, 35207 tokens
+3412 sentences, 35207 tokens
+
+UD_Old_Church_Slavonic-PROIEL
+cu_proiel-ud-dev.conllu
+1073 sentences, 10100 tokens
+1073 sentences, 10100 tokens, 13 empty nodes
+cu_proiel-ud-test.conllu
+1141 sentences, 10031 tokens
+1141 sentences, 10031 tokens, 34 empty nodes
+cu_proiel-ud-train.conllu
+4124 sentences, 37432 tokens
+4124 sentences, 37432 tokens, 97 empty nodes
+
+UD_Old_Russian-RNC
+orv_rnc-ud-test.conllu
+604 sentences, 18742 tokens
+604 sentences, 18742 tokens
+
+UD_Old_Russian-TOROT
+orv_torot-ud-dev.conllu
+1852 sentences, 15791 tokens
+1852 sentences, 15791 tokens
+orv_torot-ud-test.conllu
+1756 sentences, 15359 tokens
+1756 sentences, 15359 tokens
+orv_torot-ud-train.conllu
+13336 sentences, 118630 tokens
+13336 sentences, 118630 tokens
+
+UD_Polish-LFG
+pl_lfg-ud-dev.conllu
+1745 sentences, 13105 tokens
+ sentences,  tokens
+pl_lfg-ud-test.conllu
+1727 sentences, 13112 tokens
+ sentences,  tokens
+pl_lfg-ud-train.conllu
+13774 sentences, 104750 tokens
+ sentences,  tokens
+
+UD_Polish-PDB
+pl_pdb-ud-dev.conllu
+2215 sentences, 34683 tokens, 235 fused tokens spanning 489 nodes, i.e. 34429 total surface tokens
+ sentences,  tokens
+pl_pdb-ud-test.conllu
+2215 sentences, 33617 tokens, 250 fused tokens spanning 515 nodes, i.e. 33352 total surface tokens
+ sentences,  tokens
+pl_pdb-ud-train.conllu
+17722 sentences, 281736 tokens, 2010 fused tokens spanning 4150 nodes, i.e. 279596 total surface tokens
+ sentences,  tokens
+
+UD_Polish-PUD
+pl_pud-ud-test.conllu
+1000 sentences, 18389 tokens, 49 fused tokens spanning 100 nodes, i.e. 18338 total surface tokens
+ sentences,  tokens
+
+UD_Portuguese-Bosque
+pt_bosque-ud-dev.conllu
+560 sentences, 10851 tokens, 758 fused tokens spanning 1516 nodes, i.e. 10093 total surface tokens
+560 sentences, 10851 tokens, 758 fused tokens spanning 1516 nodes, i.e. 10093 total surface tokens, 1 empty nodes
+pt_bosque-ud-test.conllu
+477 sentences, 10200 tokens, 742 fused tokens spanning 1484 nodes, i.e. 9458 total surface tokens
+477 sentences, 10200 tokens, 742 fused tokens spanning 1484 nodes, i.e. 9458 total surface tokens, 1 empty nodes
+pt_bosque-ud-train.conllu
+8328 sentences, 206747 tokens, 15338 fused tokens spanning 30676 nodes, i.e. 191409 total surface tokens
+8328 sentences, 206747 tokens, 15338 fused tokens spanning 30676 nodes, i.e. 191409 total surface tokens, 6 empty nodes
+
+UD_Romanian-Nonstandard
+ro_nonstandard-ud-dev.conllu
+1052 sentences, 18569 tokens
+1052 sentences, 18569 tokens, 11 empty nodes
+ro_nonstandard-ud-test.conllu
+1052 sentences, 20986 tokens
+1052 sentences, 20986 tokens, 12 empty nodes
+ro_nonstandard-ud-train.conllu
+13739 sentences, 279314 tokens
+13739 sentences, 279314 tokens, 97 empty nodes
+
+UD_Romanian-RRT
+ro_rrt-ud-dev.conllu
+752 sentences, 17074 tokens
+752 sentences, 17074 tokens, 3 empty nodes
+ro_rrt-ud-test.conllu
+729 sentences, 16324 tokens
+729 sentences, 16324 tokens, 3 empty nodes
+ro_rrt-ud-train.conllu
+8043 sentences, 185113 tokens
+8043 sentences, 185113 tokens, 45 empty nodes
+
+UD_Romanian-SiMoNERo
+ro_simonero-ud-test.conllu
+491 sentences, 14552 tokens
+491 sentences, 14552 tokens
+
+UD_Russian-GSD
+ru_gsd-ud-dev.conllu
+579 sentences, 11709 tokens
+579 sentences, 11709 tokens, 4 empty nodes
+ru_gsd-ud-test.conllu
+601 sentences, 11385 tokens
+601 sentences, 11385 tokens, 24 empty nodes
+ru_gsd-ud-train.conllu
+3850 sentences, 74906 tokens
+3850 sentences, 74906 tokens, 78 empty nodes
+
+UD_Russian-PUD
+ru_pud-ud-test.conllu
+1000 sentences, 19355 tokens
+1000 sentences, 19355 tokens, 18 empty nodes
+
+UD_Russian-SynTagRus
+ru_syntagrus-ud-dev.conllu
+6584 sentences, 118488 tokens, 204 empty nodes
+4015 sentences, 75645 tokens, 76 empty nodes
+ru_syntagrus-ud-test.conllu
+6491 sentences, 117329 tokens, 194 empty nodes
+6491 sentences, 117329 tokens, 103 empty nodes
+ru_syntagrus-ud-train.conllu
+48814 sentences, 870479 tokens, 1047 empty nodes
+23406 sentences, 407348 tokens, 265 empty nodes
+
+UD_Russian-Taiga
+ru_taiga-ud-dev.conllu
+945 sentences, 10094 tokens
+945 sentences, 10094 tokens, 8 empty nodes
+ru_taiga-ud-test.conllu
+884 sentences, 10287 tokens
+884 sentences, 10287 tokens, 12 empty nodes
+ru_taiga-ud-train.conllu
+1435 sentences, 18174 tokens
+1435 sentences, 18174 tokens, 17 empty nodes
+
+UD_Sanskrit-UFAL
+sa_ufal-ud-test.conllu
+230 sentences, 1843 tokens, 259 fused tokens spanning 628 nodes, i.e. 1474 total surface tokens
+230 sentences, 1843 tokens, 259 fused tokens spanning 628 nodes, i.e. 1474 total surface tokens
+
+UD_Scottish_Gaelic-ARCOSG
+gd_arcosg-ud-dev.conllu
+642 sentences, 9949 tokens
+642 sentences, 9949 tokens
+gd_arcosg-ud-test.conllu
+536 sentences, 9945 tokens, 1 fused tokens spanning 2 nodes, i.e. 9944 total surface tokens
+536 sentences, 9945 tokens, 1 fused tokens spanning 2 nodes, i.e. 9944 total surface tokens
+gd_arcosg-ud-train.conllu
+1015 sentences, 22954 tokens, 9 fused tokens spanning 18 nodes, i.e. 22945 total surface tokens
+1015 sentences, 22954 tokens, 9 fused tokens spanning 18 nodes, i.e. 22945 total surface tokens
+
+UD_Serbian-SET
+sr_set-ud-dev.conllu
+536 sentences, 11993 tokens
+536 sentences, 11993 tokens
+sr_set-ud-test.conllu
+520 sentences, 11421 tokens
+520 sentences, 11421 tokens
+sr_set-ud-train.conllu
+3328 sentences, 74259 tokens
+3328 sentences, 74259 tokens
+
+UD_Skolt_Sami-Giellagas
+sms_giellagas-ud-test.conllu
+36 sentences, 321 tokens, 2 fused tokens spanning 4 nodes, i.e. 319 total surface tokens
+36 sentences, 321 tokens, 2 fused tokens spanning 4 nodes, i.e. 319 total surface tokens
+
+UD_Slovak-SNK
+sk_snk-ud-dev.conllu
+1060 sentences, 12440 tokens
+1060 sentences, 12440 tokens, 12 empty nodes
+sk_snk-ud-test.conllu
+1061 sentences, 13028 tokens
+1061 sentences, 13028 tokens, 10 empty nodes
+sk_snk-ud-train.conllu
+8483 sentences, 80575 tokens
+8483 sentences, 80575 tokens, 46 empty nodes
+
+UD_Slovenian-SSJ
+sl_ssj-ud-dev.conllu
+734 sentences, 14063 tokens
+734 sentences, 14063 tokens
+sl_ssj-ud-test.conllu
+788 sentences, 14077 tokens
+788 sentences, 14077 tokens
+sl_ssj-ud-train.conllu
+6478 sentences, 112530 tokens
+6478 sentences, 112530 tokens
+
+UD_Slovenian-SST
+sl_sst-ud-test.conllu
+1110 sentences, 10015 tokens
+1110 sentences, 10015 tokens, 2 empty nodes
+sl_sst-ud-train.conllu
+2078 sentences, 19473 tokens
+2078 sentences, 19473 tokens, 5 empty nodes
+
+UD_Spanish-AnCora
+es_ancora-ud-dev.conllu
+1654 sentences, 52336 tokens, 175 fused tokens spanning 350 nodes, i.e. 52161 total surface tokens
+1654 sentences, 52336 tokens, 175 fused tokens spanning 350 nodes, i.e. 52161 total surface tokens, 1 empty nodes
+es_ancora-ud-test.conllu
+1721 sentences, 52617 tokens, 184 fused tokens spanning 368 nodes, i.e. 52433 total surface tokens
+1721 sentences, 52617 tokens, 184 fused tokens spanning 368 nodes, i.e. 52433 total surface tokens, 1 empty nodes
+es_ancora-ud-train.conllu
+14305 sentences, 444616 tokens, 1528 fused tokens spanning 3058 nodes, i.e. 443086 total surface tokens
+14305 sentences, 444616 tokens, 1528 fused tokens spanning 3058 nodes, i.e. 443086 total surface tokens, 2 empty nodes
+
+UD_Spanish-GSD
+es_gsd-ud-dev.conllu
+1400 sentences, 37151 tokens, 685 fused tokens spanning 1372 nodes, i.e. 36464 total surface tokens
+1400 sentences, 37151 tokens, 685 fused tokens spanning 1372 nodes, i.e. 36464 total surface tokens
+es_gsd-ud-test.conllu
+426 sentences, 12000 tokens, 267 fused tokens spanning 534 nodes, i.e. 11733 total surface tokens
+426 sentences, 12000 tokens, 267 fused tokens spanning 534 nodes, i.e. 11733 total surface tokens
+es_gsd-ud-train.conllu
+14187 sentences, 382436 tokens, 7267 fused tokens spanning 14554 nodes, i.e. 375149 total surface tokens
+14187 sentences, 382436 tokens, 7267 fused tokens spanning 14554 nodes, i.e. 375149 total surface tokens, 1 empty nodes
+
+UD_Swedish-LinES
+sv_lines-ud-dev.conllu
+1032 sentences, 18515 tokens
+1032 sentences, 18515 tokens
+sv_lines-ud-test.conllu
+1035 sentences, 16994 tokens
+1035 sentences, 16994 tokens, 3 empty nodes
+sv_lines-ud-train.conllu
+3176 sentences, 55451 tokens
+3176 sentences, 55451 tokens, 3 empty nodes
+
+UD_Swedish-PUD
+sv_pud-ud-test.conllu
+1000 sentences, 19076 tokens, 9 empty nodes
+1000 sentences, 19076 tokens, 7 empty nodes
+
+UD_Swedish-Talbanken
+sv_talbanken-ud-dev.conllu
+504 sentences, 9797 tokens, 2 empty nodes
+504 sentences, 9797 tokens, 2 empty nodes
+sv_talbanken-ud-test.conllu
+1219 sentences, 20377 tokens, 9 empty nodes
+1219 sentences, 20377 tokens, 10 empty nodes
+sv_talbanken-ud-train.conllu
+4303 sentences, 66645 tokens, 28 empty nodes
+4303 sentences, 66645 tokens, 28 empty nodes
+
+UD_Tagalog-TRG
+tl_trg-ud-test.conllu
+55 sentences, 292 tokens
+55 sentences, 292 tokens
+
+UD_Tamil-TTB
+ta_ttb-ud-dev.conllu
+80 sentences, 1263 tokens, 121 fused tokens spanning 255 nodes, i.e. 1129 total surface tokens
+80 sentences, 1263 tokens, 121 fused tokens spanning 255 nodes, i.e. 1129 total surface tokens
+ta_ttb-ud-test.conllu
+120 sentences, 1989 tokens, 194 fused tokens spanning 411 nodes, i.e. 1772 total surface tokens
+120 sentences, 1989 tokens, 194 fused tokens spanning 411 nodes, i.e. 1772 total surface tokens
+ta_ttb-ud-train.conllu
+400 sentences, 6329 tokens, 520 fused tokens spanning 1115 nodes, i.e. 5734 total surface tokens
+400 sentences, 6329 tokens, 520 fused tokens spanning 1115 nodes, i.e. 5734 total surface tokens
+
+UD_Turkish-GB
+tr_gb-ud-test.conllu
+2802 sentences, 16881 tokens, 367 fused tokens spanning 737 nodes, i.e. 16511 total surface tokens
+2802 sentences, 16881 tokens, 367 fused tokens spanning 737 nodes, i.e. 16511 total surface tokens
+
+UD_Turkish-IMST
+tr_imst-ud-dev.conllu
+988 sentences, 10046 tokens, 264 fused tokens spanning 533 nodes, i.e. 9777 total surface tokens
+988 sentences, 10046 tokens, 264 fused tokens spanning 533 nodes, i.e. 9777 total surface tokens
+tr_imst-ud-test.conllu
+983 sentences, 10029 tokens, 225 fused tokens spanning 457 nodes, i.e. 9797 total surface tokens
+983 sentences, 10029 tokens, 225 fused tokens spanning 457 nodes, i.e. 9797 total surface tokens
+tr_imst-ud-train.conllu
+3664 sentences, 37784 tokens, 949 fused tokens spanning 1911 nodes, i.e. 36822 total surface tokens
+3664 sentences, 37784 tokens, 949 fused tokens spanning 1911 nodes, i.e. 36822 total surface tokens
+
+UD_Ukrainian-IU
+uk_iu-ud-dev.conllu
+672 sentences, 12574 tokens, 1 fused tokens spanning 2 nodes, i.e. 12573 total surface tokens, 15 empty nodes
+672 sentences, 12574 tokens, 1 fused tokens spanning 2 nodes, i.e. 12573 total surface tokens, 10 empty nodes
+uk_iu-ud-test.conllu
+892 sentences, 17116 tokens, 2 fused tokens spanning 4 nodes, i.e. 17114 total surface tokens, 30 empty nodes
+892 sentences, 17116 tokens, 2 fused tokens spanning 4 nodes, i.e. 17114 total surface tokens, 14 empty nodes
+uk_iu-ud-train.conllu
+5496 sentences, 92401 tokens, 46 fused tokens spanning 92 nodes, i.e. 92355 total surface tokens, 188 empty nodes
+5496 sentences, 92401 tokens, 46 fused tokens spanning 92 nodes, i.e. 92355 total surface tokens, 113 empty nodes
+
+UD_Upper_Sorbian-UFAL
+hsb_ufal-ud-test.conllu
+623 sentences, 10736 tokens
+623 sentences, 10736 tokens, 13 empty nodes
+hsb_ufal-ud-train.conllu
+23 sentences, 460 tokens
+23 sentences, 460 tokens
+
+UD_Urdu-UDTB
+ur_udtb-ud-dev.conllu
+552 sentences, 14581 tokens
+552 sentences, 14581 tokens
+ur_udtb-ud-test.conllu
+535 sentences, 14806 tokens
+535 sentences, 14806 tokens
+ur_udtb-ud-train.conllu
+4043 sentences, 108690 tokens
+4043 sentences, 108690 tokens
+
+UD_Vietnamese-VTB
+vi_vtb-ud-dev.conllu
+800 sentences, 11514 tokens
+800 sentences, 11514 tokens
+vi_vtb-ud-test.conllu
+800 sentences, 11955 tokens
+800 sentences, 11955 tokens
+vi_vtb-ud-train.conllu
+1400 sentences, 20285 tokens
+1400 sentences, 20285 tokens
+
+UD_Warlpiri-UFAL
+wbp_ufal-ud-test.conllu
+55 sentences, 314 tokens, 8 fused tokens spanning 16 nodes, i.e. 306 total surface tokens
+55 sentences, 314 tokens, 8 fused tokens spanning 16 nodes, i.e. 306 total surface tokens
+
+UD_Welsh-CCG
+cy_ccg-ud-test.conllu
+956 sentences, 16989 tokens, 168 fused tokens spanning 337 nodes, i.e. 16820 total surface tokens
+956 sentences, 16989 tokens, 168 fused tokens spanning 337 nodes, i.e. 16820 total surface tokens
+
+UD_Wolof-WTB
+wo_wtb-ud-dev.conllu
+449 sentences, 10294 tokens, 299 fused tokens spanning 627 nodes, i.e. 9966 total surface tokens
+449 sentences, 10294 tokens, 299 fused tokens spanning 627 nodes, i.e. 9966 total surface tokens
+wo_wtb-ud-test.conllu
+470 sentences, 10403 tokens, 309 fused tokens spanning 663 nodes, i.e. 10049 total surface tokens
+470 sentences, 10403 tokens, 309 fused tokens spanning 663 nodes, i.e. 10049 total surface tokens
+wo_wtb-ud-train.conllu
+1188 sentences, 23561 tokens, 667 fused tokens spanning 1411 nodes, i.e. 22817 total surface tokens
+1188 sentences, 23561 tokens, 667 fused tokens spanning 1411 nodes, i.e. 22817 total surface tokens
+
+UD_Yoruba-YTB
+yo_ytb-ud-test.conllu
+100 sentences, 2664 tokens
+100 sentences, 2664 tokens
+for i in data/nodeps/UD_* ; do for j in $i/*.conllu ; do k=data/enhanced/`basename $i`/`basename $j` ; src=`wc_conll.pl $j | perl -pe 's/^.*, (\d+) tokens.*$/\1/ or $_=0'` ; tgt=`wc_conll.pl $k | perl -pe 's/^.*, (\d+) tokens.*$/\1/ or $_=0'` ; if [[ "$src" != "$tgt" ]] ; then echo Need to rerun $j src=$src tgt=$tgt ; fi ; done ; done
+Need to rerun data/nodeps/UD_Ancient_Greek-PROIEL/grc_proiel-ud-train.conllu src=187033 tgt=123484
+Need to rerun data/nodeps/UD_Czech-FicTree/cs_fictree-ud-train.conllu src=133637 tgt=6710
+Need to rerun data/nodeps/UD_Dutch-Alpino/nl_alpino-ud-train.conllu src=185883 tgt=33934
+Need to rerun data/nodeps/UD_French-GSD/fr_gsd-ud-train.conllu src=354661 tgt=347421
+Need to rerun data/nodeps/UD_German-GSD/de_gsd-ud-dev.conllu src=12486 tgt=0
+Need to rerun data/nodeps/UD_German-GSD/de_gsd-ud-test.conllu src=16498 tgt=0
+Need to rerun data/nodeps/UD_German-GSD/de_gsd-ud-train.conllu src=263804 tgt=0
+Need to rerun data/nodeps/UD_German-HDT/de_hdt-ud-dev.conllu src=319513 tgt=0
+Need to rerun data/nodeps/UD_German-HDT/de_hdt-ud-test.conllu src=326250 tgt=0
+Need to rerun data/nodeps/UD_German-HDT/de_hdt-ud-train.conllu src=2753627 tgt=0
+Need to rerun data/nodeps/UD_German-LIT/de_lit-ud-test.conllu src=40440 tgt=0
+Need to rerun data/nodeps/UD_German-PUD/de_pud-ud-test.conllu src=21329 tgt=0
+Need to rerun data/nodeps/UD_Irish-IDT/ga_idt-ud-dev.conllu src=10000 tgt=0
+Need to rerun data/nodeps/UD_Irish-IDT/ga_idt-ud-test.conllu src=10138 tgt=0
+Need to rerun data/nodeps/UD_Irish-IDT/ga_idt-ud-train.conllu src=20434 tgt=0
+Need to rerun data/nodeps/UD_Latin-ITTB/la_ittb-ud-dev.conllu src=29888 tgt=7718
+Need to rerun data/nodeps/UD_Latin-ITTB/la_ittb-ud-train.conllu src=293305 tgt=67962
+Need to rerun data/nodeps/UD_Latin-PROIEL/la_proiel-ud-train.conllu src=172133 tgt=7449
+Need to rerun data/nodeps/UD_Latvian-LVTB/lv_lvtb-ud-dev.conllu src=25965 tgt=2508
+Need to rerun data/nodeps/UD_Latvian-LVTB/lv_lvtb-ud-test.conllu src=26396 tgt=1633
+Need to rerun data/nodeps/UD_Latvian-LVTB/lv_lvtb-ud-train.conllu src=167594 tgt=897
+Need to rerun data/nodeps/UD_Polish-LFG/pl_lfg-ud-dev.conllu src=13105 tgt=0
+Need to rerun data/nodeps/UD_Polish-LFG/pl_lfg-ud-test.conllu src=13112 tgt=0
+Need to rerun data/nodeps/UD_Polish-LFG/pl_lfg-ud-train.conllu src=104750 tgt=0
+Need to rerun data/nodeps/UD_Polish-PDB/pl_pdb-ud-dev.conllu src=34683 tgt=0
+Need to rerun data/nodeps/UD_Polish-PDB/pl_pdb-ud-test.conllu src=33617 tgt=0
+Need to rerun data/nodeps/UD_Polish-PDB/pl_pdb-ud-train.conllu src=281736 tgt=0
+Need to rerun data/nodeps/UD_Polish-PUD/pl_pud-ud-test.conllu src=18389 tgt=0
+Need to rerun data/nodeps/UD_Russian-SynTagRus/ru_syntagrus-ud-dev.conllu src=118488 tgt=75645
+Need to rerun data/nodeps/UD_Russian-SynTagRus/ru_syntagrus-ud-train.conllu src=870479 tgt=407348
