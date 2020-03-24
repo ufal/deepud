@@ -99,3 +99,8 @@ enhance:
 	cp -r data/nodeps/UD_* data/enhanced
 	mkdir -p enhancer-cluster
 	cd enhancer-cluster ; for i in ../data/enhanced/UD_*/*.conllu ; do script=`basename $$i .conllu`.sh ; ( echo ../stanford_enhancer.sh $$i > $$script ) ; chmod 755 $$script ; git add $$script ; qsub -cwd -j y -l mem_free=10G,act_mem_free=10G,h_vmem=12G -m n $$script ; done
+
+# Check the cluster log files for Stanford Enhancer errors.
+enhance_errors:
+	echo Problems with graphs: `grep 'Problem with graph' enhancer-cluster/*.o* | wc -l`
+	grep -iP 'error|exception' enhancer-cluster/*.o*
