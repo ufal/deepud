@@ -98,4 +98,4 @@ enhance:
 	rm -rf data/enhanced/UD_*
 	cp -r data/nodeps/UD_* data/enhanced
 	for i in data/enhanced/UD_*/*.conllu ; do ./stanford_enhancer.sh $$i ; done
-
+	# ( for i in ../data/enhanced/UD_*/*.conllu ; do script=`basename $i .conllu`.sh ; ( echo ../stanford_enhancer.sh $i > $script ) ; chmod 755 $script ; qsub -cwd -j y -l mem_free=10G,act_mem_free=10G,h_vmem=12G -m n $script ; done )
