@@ -12,10 +12,16 @@ relpron=`cat data/relpron/relpron-$language.txt`
 if [[ -d "data/embeddings/$language" ]] ; then
   embeddings=data/embeddings/$language/`ls -1 data/embeddings/$language | grep vectors`
   echo $1 '('$language, $relpron, $embeddings')'
+  TMPVEC=/COMP.TMP/$$.vectors
+  echo Extracting $embeddings to $TMPVEC...
+  if [[ -e "$TMPVEC" ]] ; then
+    echo "$TMPVEC" already exists, giving up.
+    exit 1
+  fi
   xzcat $embeddings > data/current.vectors
   java -mx4g -cp "$CORENLPDIR/*" edu.stanford.nlp.trees.ud.UniversalEnhancer -relativePronouns "$relpron" -conlluFile $1 -embeddings data/current.vectors -numHid 100 > enhanced.conllu
   mv enhanced.conllu $1
-  rm -f data/current.vectors
+  rm -f $TMPVEC
 else
   echo $1 '('$language, $relpron, NO EMBEDDINGS')'
   java -mx4g -cp "$CORENLPDIR/*" edu.stanford.nlp.trees.ud.UniversalEnhancer -relativePronouns "$relpron" -conlluFile $1 -numHid 100 > enhanced.conllu
