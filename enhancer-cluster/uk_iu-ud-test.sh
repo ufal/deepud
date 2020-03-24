@@ -1,3 +1,1 @@
-#!/bin/bash
-
-java -mx4g -cp "*" edu.stanford.nlp.trees.ud.UniversalEnhancer -relativePronouns "де|доки|коли|куди|скільки|хто|чому|чий|чого|чому|що|які|як|який|якого|які|відколи|віщо|де|доки|допоки|звідки|ким|кого|коли|кому|котра|котра́|котрий|котрими|котрих|котрого|котрому|котру|котрі|куди|навіщо|нащо|поки|скільки|хто|чий|чим|чию|чиїм|чого|чому|чім|шо|що|як|яка|яке|який|яким|якими|яких|якого|якому|якою|якої|яку|які|якій" -conlluFile ../Data_for_Enhancer/unEnhanced_2.4/UD_Ukrainian-IU/uk_iu-ud-test.conllu -embeddings /net/work/people/zeman/mrptask/sharedata/embeddings/Ukrainian/uk.vectors > ../Data_for_Enhancer/OUT/UD_Ukrainian-IU/uk_iu-ud-test.conllu
+../stanford_enhancer.sh ../data/enhanced/UD_Ukrainian-IU/uk_iu-ud-test.conllu

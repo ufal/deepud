@@ -1,3 +1,1 @@
-#!/bin/bash
-
-java -mx4g -cp "*" edu.stanford.nlp.trees.ud.UniversalEnhancer -relativePronouns "något|som|vad|vilka|vilken|de|man|någon|något|som|vad|vars|vilka|vilkas|vilken|vilket" -conlluFile ../Data_for_Enhancer/unEnhanced_2.4/UD_Swedish-Talbanken/sv_talbanken-ud-dev.conllu -embeddings /net/work/people/zeman/mrptask/sharedata/embeddings/Swedish/sv.vectors > ../Data_for_Enhancer/OUT/UD_Swedish-Talbanken/sv_talbanken-ud-dev.conllu
+../stanford_enhancer.sh ../data/enhanced/UD_Swedish-Talbanken/sv_talbanken-ud-dev.conllu

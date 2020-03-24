@@ -1,3 +1,1 @@
-#!/bin/bash
-
-java -mx4g -cp "*" edu.stanford.nlp.trees.ud.UniversalEnhancer -relativePronouns "гдето|доколкото|каквато|каквото|както|когато|когото|което|които|който|колкото|която|откак|гдето|дето|докогато|доколкото|каквато|каквито|каквото|както|какъвто|когато|когото|което|които|който|колкото|която|където|откак|откакто|отколкото|откъдето|чието|чиито|чийто|чиято|що" -conlluFile ../Data_for_Enhancer/unEnhanced_2.4/UD_Bulgarian-BTB/bg_btb-ud-test.conllu -embeddings /net/work/people/zeman/mrptask/sharedata/embeddings/Bulgarian/bg.vectors > ../Data_for_Enhancer/OUT/UD_Bulgarian-BTB/bg_btb-ud-test.conllu
+../stanford_enhancer.sh ../data/enhanced/UD_Bulgarian-BTB/bg_btb-ud-test.conllu
