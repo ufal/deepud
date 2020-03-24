@@ -1,3 +1,1 @@
-#!/bin/bash
-
-java -mx4g -cp "*" edu.stanford.nlp.trees.ud.UniversalEnhancer -relativePronouns "aki|akinek|ami|amikor|aminek|amint|amíg|mielőtt|miközben|mint|míg|ahogy|ahogyan|ahol|ahonnan|aki|akik|akiknek|akiktől|akinek|akire|akit|akivel|amellyel|amely|amelyben|amelyből|amelyek|amelyekben|amelyeket|amelyeknek|amelyen|amelyet|amelyhez|amelyik|amelyiktől|amelynek|amelyre|ami|amiben|amiből|amihez|amik|amiket|amiknek|amikor|amikorra|amilyen|amilyenben|amin|amint|amire|amit|amitől|amivel|amiért|amióta|amíg|mely|melyben|melyből|melyeket|melyen|melynek|melyről|mi|mielőtt|mikor|miközben|mint|mire|mit|miáltal|míg" -conlluFile ../Data_for_Enhancer/unEnhanced_2.4/UD_Hungarian-Szeged/hu_szeged-ud-train.conllu -embeddings /net/work/people/zeman/mrptask/sharedata/embeddings/Hungarian/hu.vectors > ../Data_for_Enhancer/OUT/UD_Hungarian-Szeged/hu_szeged-ud-train.conllu
+../stanford_enhancer.sh ../data/enhanced/UD_Hungarian-Szeged/hu_szeged-ud-train.conllu

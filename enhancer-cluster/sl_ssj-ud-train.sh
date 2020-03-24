@@ -1,3 +1,1 @@
-#!/bin/bash
-
-java -mx4g -cp "*" edu.stanford.nlp.trees.ud.UniversalEnhancer -relativePronouns "kar|kdor|kar|karkoli|kdor|kakršen|kakršenkoli|kakršna|kakršnakoli|kakršne|kakršnega|kakršnegakoli|kakršnemu|kakršni|kakršnih|kakršnim|kakršno|kakršnokoli|kar|karkoli|kateregakoli|kateremkoli|katerikoli|katerokoli|kdor|kdorkoli|kogar|komerkoli|česar|čemer|čemerkoli|česar|čigar|čimer" -conlluFile ../Data_for_Enhancer/unEnhanced_2.4/UD_Slovenian-SSJ/sl_ssj-ud-train.conllu -embeddings /net/work/people/zeman/mrptask/sharedata/embeddings/Slovenian/sl.vectors > ../Data_for_Enhancer/OUT/UD_Slovenian-SSJ/sl_ssj-ud-train.conllu
+../stanford_enhancer.sh ../data/enhanced/UD_Slovenian-SSJ/sl_ssj-ud-train.conllu
