@@ -101,11 +101,11 @@ enhance:
 	cd enhancer-cluster ; for i in ../data/enhanced/UD_*/*.conllu ; do script=`basename $$i .conllu`.sh ; ( echo ../stanford_enhancer.sh $$i > $$script ) ; chmod 755 $$script ; git add $$script ; qsub -cwd -j y -l mem_free=10G,act_mem_free=10G,h_vmem=12G -m n $$script ; done
 
 # Check the cluster log files for Stanford Enhancer errors.
-enhance_errors:
+check_enhancement_errors:
 	echo Problems with graphs: `grep 'Problem with graph' enhancer-cluster/*.o* | wc -l`
 	grep -iP 'error|exception' enhancer-cluster/*.o*
 
-enhance_wcc:
+check_enhancement_wcc:
 	for i in data/nodeps/UD_* ; do echo ; echo `basename $$i` ; for j in $$i/*.conllu ; do echo `basename $$j` ; wc_conll.pl $$j ; wc_conll.pl data/enhanced/`basename $$i`/`basename $$j` ; done ; done
 	for i in data/nodeps/UD_* ; do for j in $$i/*.conllu ; do k=data/enhanced/`basename $$i`/`basename $$j` ; src=`wc_conll.pl $$j | perl -pe 's/^.*, (\d+) tokens.*$$/\1/ or $$_=0'` ; tgt=`wc_conll.pl $$k | perl -pe 's/^.*, (\d+) tokens.*$$/\1/ or $$_=0'` ; if [[ "$$src" != "$$tgt" ]] ; then echo Need to rerun $$j src=$$src tgt=$$tgt ; fi ; done ; done
 
@@ -113,3 +113,13 @@ enhance_wcc:
 # If the Stanford Enhancer crashed, copy the basic tree to DEPS.
 patch_with_basic:
 	for i in data/nodeps/UD_* ; do for j in $$i/*.conllu ; do k=data/enhanced/`basename $$i`/`basename $$j` ; src=`wc_conll.pl $$j | perl -pe 's/^.*, (\d+) tokens.*$$/\1/ or $$_=0'` ; tgt=`wc_conll.pl $$k | perl -pe 's/^.*, (\d+) tokens.*$$/\1/ or $$_=0'` ; if [[ "$$src" != "$$tgt" ]] ; then echo $$j to $$k ; ( cat $$j | conllu-copy-basic-to-enhanced.pl > $$k ) ; fi ; done ; done
+
+# For languages for which we have trusted full enhanced annotation, replace the
+# output of the Stanford Enhancer with the trusted annotation.
+patch_with_trusted:
+	cp data/ud/UD_Dutch-Alpino/*.conllu data/enhanced/UD_Dutch-Alpino
+	cp data/ud/UD_Dutch-LassySmall/*.conllu data/enhanced/UD_Dutch-LassySmall
+	cp data/ud/UD_English-EWT/*.conllu data/enhanced/UD_English-EWT
+	cp data/ud/UD_English-PUD/*.conllu data/enhanced/UD_English-PUD
+	cp data/ud/UD_Swedish-Talbanken/*.conllu data/enhanced/UD_English-Talbanken
+	cp data/ud/UD_Swedish-PUD/*.conllu data/enhanced/UD_Swedish-PUD
