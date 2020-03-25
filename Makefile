@@ -121,5 +121,5 @@ patch_with_trusted:
 	cp data/ud/UD_Dutch-LassySmall/*.conllu data/enhanced/UD_Dutch-LassySmall
 	cp data/ud/UD_English-EWT/*.conllu data/enhanced/UD_English-EWT
 	cp data/ud/UD_English-PUD/*.conllu data/enhanced/UD_English-PUD
-	cp data/ud/UD_Swedish-Talbanken/*.conllu data/enhanced/UD_English-Talbanken
+	cp data/ud/UD_Swedish-Talbanken/*.conllu data/enhanced/UD_Swedish-Talbanken
 	cp data/ud/UD_Swedish-PUD/*.conllu data/enhanced/UD_Swedish-PUD
