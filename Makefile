@@ -123,3 +123,7 @@ patch_with_trusted:
 	cp data/ud/UD_English-PUD/*.conllu data/enhanced/UD_English-PUD
 	cp data/ud/UD_Swedish-Talbanken/*.conllu data/enhanced/UD_Swedish-Talbanken
 	cp data/ud/UD_Swedish-PUD/*.conllu data/enhanced/UD_Swedish-PUD
+
+deep:
+	rm -rf data/deep
+	cp -r data/enhanced data/deep

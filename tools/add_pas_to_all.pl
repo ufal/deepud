@@ -9,24 +9,44 @@ binmode(STDIN, ':utf8');
 binmode(STDOUT, ':utf8');
 binmode(STDERR, ':utf8');
 
-my $projekty = 'C:/Users/Dan/Documents/Lingvistika/Projekty';
-my $tools = "$projekty/mrptask/tools";
-my $enhanced = "$projekty/mrptask/deepud/data/deepuddata/enhanced";
-my $workdeep = "$projekty/wdeep";
+my $os = 'windows'; # windows|unix
+my $projekty;
+my $pathslash;
+my $nooutput;
+# Dan's laptop:
+if($os eq 'windows')
+{
+    $projekty = 'C:/Users/Dan/Documents/Lingvistika/Projekty';
+    $pathslash = "\\";
+    $nooutput = 'NIL:';
+}
+# Dan's working folder on ÚFAL network:
+else
+{
+    $projekty = '/net/work/people/zeman';
+    $pathslash = '/';
+    $nooutput = '/dev/null';
+}
+my $tools = "$projekty/deepud/tools";
+my $enhanced = "$projekty/deepud/data/enhanced";
+my $workdeep = "$projekty/deepud/data/deep"; # release 2.4 is in a local git on Dan's laptop in $projekty/wdeep
+my $release = 'http://hdl.handle.net/11234/1-2988'; # UD release 2.4
 opendir(DIR, $enhanced) or die("Cannot read folder $enhanced: $!");
 my @folders = sort(grep {m/^UD_/} (readdir(DIR)));
 closedir(DIR);
 foreach my $folder (@folders)
 {
-    next unless($folder eq 'UD_English-EWT'); ###!!!
+    #next unless($folder eq 'UD_English-EWT'); ###!!!
     opendir(DIR, "$enhanced/$folder") or die("Cannot read folder $enhanced/$folder: $!");
     my @files = grep {m/\.conllu$/} (readdir(DIR));
     closedir(DIR);
     foreach my $file (@files)
     {
         print STDERR ("$folder/$file\n");
-        system("perl -I $tools $tools/add_pas.pl --udpath $enhanced --release http://hdl.handle.net/11234/1-2988 --folder $folder --file $file >$workdeep\\$folder\\${file}p 2>NIL:");
+        my $outpath = $workdeep.$pathslash.$folder.$pathslash.$file.'p';
+        system("perl -I $tools $tools/add_pas.pl --udpath $enhanced --release $release --folder $folder --file $file >$outpath 2>$nooutput");
     }
     print STDERR ("$folder/all.log");
-    system("perl -I $tools $tools/add_pas.pl --udpath $workdeep --release http://hdl.handle.net/11234/1-2988 --folder $folder --file all.conllu >NIL: 2>$workdeep\\$folder\\all.log");
+    my $outpath = $workdeep.$pathslash.$folder.$pathslash.'all.log';
+    system("perl -I $tools $tools/add_pas.pl --udpath $workdeep --release $release --folder $folder --file all.conllu >$nooutput 2>$outpath");
 }
