@@ -433,34 +433,34 @@ gl_treegal-ud-train.conllu
 UD_German-GSD
 de_gsd-ud-dev.conllu
 799 sentences, 12486 tokens, 164 fused tokens spanning 328 nodes, i.e. 12322 total surface tokens
- sentences,  tokens
+799 sentences, 12486 tokens, 164 fused tokens spanning 328 nodes, i.e. 12322 total surface tokens
 de_gsd-ud-test.conllu
 977 sentences, 16498 tokens, 274 fused tokens spanning 548 nodes, i.e. 16224 total surface tokens
- sentences,  tokens
+977 sentences, 16498 tokens, 274 fused tokens spanning 548 nodes, i.e. 16224 total surface tokens
 de_gsd-ud-train.conllu
 13814 sentences, 263804 tokens, 4610 fused tokens spanning 9220 nodes, i.e. 259194 total surface tokens
- sentences,  tokens
+13814 sentences, 263804 tokens, 4610 fused tokens spanning 9220 nodes, i.e. 259194 total surface tokens, 6 empty nodes
 
 UD_German-HDT
 de_hdt-ud-dev.conllu
 18434 sentences, 319513 tokens
- sentences,  tokens
+18434 sentences, 319513 tokens, 4 empty nodes
 de_hdt-ud-test.conllu
 18459 sentences, 326250 tokens
- sentences,  tokens
+18459 sentences, 326250 tokens
 de_hdt-ud-train.conllu
 153035 sentences, 2753627 tokens
- sentences,  tokens
+153035 sentences, 2753627 tokens
 
 UD_German-LIT
 de_lit-ud-test.conllu
 1922 sentences, 40440 tokens, 105 fused tokens spanning 210 nodes, i.e. 40335 total surface tokens
- sentences,  tokens
+673 sentences, 12278 tokens, 68 fused tokens spanning 136 nodes, i.e. 12210 total surface tokens, 9 empty nodes
 
 UD_German-PUD
 de_pud-ud-test.conllu
 1000 sentences, 21329 tokens, 328 fused tokens spanning 656 nodes, i.e. 21001 total surface tokens
- sentences,  tokens
+1000 sentences, 21329 tokens, 328 fused tokens spanning 656 nodes, i.e. 21001 total surface tokens, 6 empty nodes
 
 UD_Gothic-PROIEL
 got_proiel-ud-dev.conllu
@@ -558,13 +558,13 @@ id_gsd-ud-train.conllu
 UD_Irish-IDT
 ga_idt-ud-dev.conllu
 451 sentences, 10000 tokens
- sentences,  tokens
+451 sentences, 10000 tokens
 ga_idt-ud-test.conllu
 454 sentences, 10138 tokens
- sentences,  tokens
+454 sentences, 10138 tokens
 ga_idt-ud-train.conllu
 858 sentences, 20434 tokens
- sentences,  tokens
+858 sentences, 20434 tokens
 
 UD_Italian-ISDT
 it_isdt-ud-dev.conllu
@@ -873,29 +873,29 @@ orv_torot-ud-train.conllu
 UD_Polish-LFG
 pl_lfg-ud-dev.conllu
 1745 sentences, 13105 tokens
- sentences,  tokens
+1745 sentences, 13105 tokens
 pl_lfg-ud-test.conllu
 1727 sentences, 13112 tokens
- sentences,  tokens
+1727 sentences, 13112 tokens
 pl_lfg-ud-train.conllu
 13774 sentences, 104750 tokens
- sentences,  tokens
+13774 sentences, 104750 tokens
 
 UD_Polish-PDB
 pl_pdb-ud-dev.conllu
 2215 sentences, 34683 tokens, 235 fused tokens spanning 489 nodes, i.e. 34429 total surface tokens
- sentences,  tokens
+2215 sentences, 34683 tokens, 235 fused tokens spanning 489 nodes, i.e. 34429 total surface tokens, 9 empty nodes
 pl_pdb-ud-test.conllu
 2215 sentences, 33617 tokens, 250 fused tokens spanning 515 nodes, i.e. 33352 total surface tokens
- sentences,  tokens
+2215 sentences, 33617 tokens, 250 fused tokens spanning 515 nodes, i.e. 33352 total surface tokens, 3 empty nodes
 pl_pdb-ud-train.conllu
 17722 sentences, 281736 tokens, 2010 fused tokens spanning 4150 nodes, i.e. 279596 total surface tokens
- sentences,  tokens
+17722 sentences, 281736 tokens, 2014 fused tokens spanning 4158 nodes, i.e. 279592 total surface tokens, 70 empty nodes
 
 UD_Polish-PUD
 pl_pud-ud-test.conllu
 1000 sentences, 18389 tokens, 49 fused tokens spanning 100 nodes, i.e. 18338 total surface tokens
- sentences,  tokens
+1000 sentences, 18389 tokens, 49 fused tokens spanning 100 nodes, i.e. 18338 total surface tokens, 2 empty nodes
 
 UD_Portuguese-Bosque
 pt_bosque-ud-dev.conllu
@@ -1187,29 +1187,12 @@ Need to rerun data/nodeps/UD_Ancient_Greek-PROIEL/grc_proiel-ud-train.conllu src
 Need to rerun data/nodeps/UD_Czech-FicTree/cs_fictree-ud-train.conllu src=133637 tgt=6710
 Need to rerun data/nodeps/UD_Dutch-Alpino/nl_alpino-ud-train.conllu src=185883 tgt=33934
 Need to rerun data/nodeps/UD_French-GSD/fr_gsd-ud-train.conllu src=354661 tgt=347421
-Need to rerun data/nodeps/UD_German-GSD/de_gsd-ud-dev.conllu src=12486 tgt=0
-Need to rerun data/nodeps/UD_German-GSD/de_gsd-ud-test.conllu src=16498 tgt=0
-Need to rerun data/nodeps/UD_German-GSD/de_gsd-ud-train.conllu src=263804 tgt=0
-Need to rerun data/nodeps/UD_German-HDT/de_hdt-ud-dev.conllu src=319513 tgt=0
-Need to rerun data/nodeps/UD_German-HDT/de_hdt-ud-test.conllu src=326250 tgt=0
-Need to rerun data/nodeps/UD_German-HDT/de_hdt-ud-train.conllu src=2753627 tgt=0
-Need to rerun data/nodeps/UD_German-LIT/de_lit-ud-test.conllu src=40440 tgt=0
-Need to rerun data/nodeps/UD_German-PUD/de_pud-ud-test.conllu src=21329 tgt=0
-Need to rerun data/nodeps/UD_Irish-IDT/ga_idt-ud-dev.conllu src=10000 tgt=0
-Need to rerun data/nodeps/UD_Irish-IDT/ga_idt-ud-test.conllu src=10138 tgt=0
-Need to rerun data/nodeps/UD_Irish-IDT/ga_idt-ud-train.conllu src=20434 tgt=0
+Need to rerun data/nodeps/UD_German-LIT/de_lit-ud-test.conllu src=40440 tgt=12278
 Need to rerun data/nodeps/UD_Latin-ITTB/la_ittb-ud-dev.conllu src=29888 tgt=7718
 Need to rerun data/nodeps/UD_Latin-ITTB/la_ittb-ud-train.conllu src=293305 tgt=67962
 Need to rerun data/nodeps/UD_Latin-PROIEL/la_proiel-ud-train.conllu src=172133 tgt=7449
 Need to rerun data/nodeps/UD_Latvian-LVTB/lv_lvtb-ud-dev.conllu src=25965 tgt=2508
 Need to rerun data/nodeps/UD_Latvian-LVTB/lv_lvtb-ud-test.conllu src=26396 tgt=1633
 Need to rerun data/nodeps/UD_Latvian-LVTB/lv_lvtb-ud-train.conllu src=167594 tgt=897
-Need to rerun data/nodeps/UD_Polish-LFG/pl_lfg-ud-dev.conllu src=13105 tgt=0
-Need to rerun data/nodeps/UD_Polish-LFG/pl_lfg-ud-test.conllu src=13112 tgt=0
-Need to rerun data/nodeps/UD_Polish-LFG/pl_lfg-ud-train.conllu src=104750 tgt=0
-Need to rerun data/nodeps/UD_Polish-PDB/pl_pdb-ud-dev.conllu src=34683 tgt=0
-Need to rerun data/nodeps/UD_Polish-PDB/pl_pdb-ud-test.conllu src=33617 tgt=0
-Need to rerun data/nodeps/UD_Polish-PDB/pl_pdb-ud-train.conllu src=281736 tgt=0
-Need to rerun data/nodeps/UD_Polish-PUD/pl_pud-ud-test.conllu src=18389 tgt=0
 Need to rerun data/nodeps/UD_Russian-SynTagRus/ru_syntagrus-ud-dev.conllu src=118488 tgt=75645
 Need to rerun data/nodeps/UD_Russian-SynTagRus/ru_syntagrus-ud-train.conllu src=870479 tgt=407348

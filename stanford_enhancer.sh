@@ -25,7 +25,8 @@ if [[ -d "$EMBEDDIR/$language" ]] ; then
     echo "$TMPVEC" already exists, giving up.
     exit 1
   fi
-  xzcat $embeddings > $TMPVEC
+  # Avoid running out of memory. Take only vectors of the 2 million most frequent words.
+  xzcat $embeddings | head -2000000 > $TMPVEC
   java -mx4g -cp "$CORENLPDIR/*" edu.stanford.nlp.trees.ud.UniversalEnhancer -relativePronouns "$relpron" -conlluFile $1 -embeddings $TMPVEC -numHid 100 > $TMPOUT
   mv $TMPOUT $1
   rm -f $TMPVEC
