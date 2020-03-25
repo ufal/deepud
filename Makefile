@@ -127,3 +127,5 @@ patch_with_trusted:
 deep:
 	rm -rf data/deep
 	cp -r data/enhanced data/deep
+	for i in data/deep/UD_* ; do pushd $$i ; cat *.conllu > all.conllu ; popd ; done
+	# Now call tools/add_pas_to_all.pl
