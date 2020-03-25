@@ -108,3 +108,8 @@ enhance_errors:
 enhance_wcc:
 	for i in data/nodeps/UD_* ; do echo ; echo `basename $$i` ; for j in $$i/*.conllu ; do echo `basename $$j` ; wc_conll.pl $$j ; wc_conll.pl data/enhanced/`basename $$i`/`basename $$j` ; done ; done
 	for i in data/nodeps/UD_* ; do for j in $$i/*.conllu ; do k=data/enhanced/`basename $$i`/`basename $$j` ; src=`wc_conll.pl $$j | perl -pe 's/^.*, (\d+) tokens.*$$/\1/ or $$_=0'` ; tgt=`wc_conll.pl $$k | perl -pe 's/^.*, (\d+) tokens.*$$/\1/ or $$_=0'` ; if [[ "$$src" != "$$tgt" ]] ; then echo Need to rerun $$j src=$$src tgt=$$tgt ; fi ; done ; done
+
+# Make sure every file in "enhanced" contains all tokens and has something valid in the DEPS column.
+# If the Stanford Enhancer crashed, copy the basic tree to DEPS.
+patch_with_basic:
+	for i in data/nodeps/UD_* ; do for j in $$i/*.conllu ; do k=data/enhanced/`basename $$i`/`basename $$j` ; src=`wc_conll.pl $$j | perl -pe 's/^.*, (\d+) tokens.*$$/\1/ or $$_=0'` ; tgt=`wc_conll.pl $$k | perl -pe 's/^.*, (\d+) tokens.*$$/\1/ or $$_=0'` ; if [[ "$$src" != "$$tgt" ]] ; then echo $$j to $$k ; ( cat $$j | conllu-copy-basic-to-enhanced.pl > $$k ) ; fi ; done ; done
