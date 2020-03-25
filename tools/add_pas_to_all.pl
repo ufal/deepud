@@ -9,7 +9,7 @@ binmode(STDIN, ':utf8');
 binmode(STDOUT, ':utf8');
 binmode(STDERR, ':utf8');
 
-my $os = 'windows'; # windows|unix
+my $os = 'unix'; # windows|unix
 my $projekty;
 my $pathslash;
 my $nooutput;
