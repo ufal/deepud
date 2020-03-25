@@ -36,7 +36,7 @@ my @folders = sort(grep {m/^UD_/} (readdir(DIR)));
 closedir(DIR);
 foreach my $folder (@folders)
 {
-    next unless($folder eq 'UD_English-EWT'); ###!!!
+    #next unless($folder eq 'UD_English-EWT'); ###!!!
     opendir(DIR, "$enhanced/$folder") or die("Cannot read folder $enhanced/$folder: $!");
     my @files = grep {m/\.conllu$/} (readdir(DIR));
     closedir(DIR);
@@ -46,7 +46,7 @@ foreach my $folder (@folders)
         my $outpath = $workdeep.$pathslash.$folder.$pathslash.$file.'p';
         system("perl -I $tools $tools/add_pas.pl --udpath $enhanced --release $release --folder $folder --file $file >$outpath 2>$nooutput");
     }
-    print STDERR ("$folder/all.log");
+    print STDERR ("$folder/all.log\n");
     my $outpath = $workdeep.$pathslash.$folder.$pathslash.'all.log';
     system("perl -I $tools $tools/add_pas.pl --udpath $workdeep --release $release --folder $folder --file all.conllu >$nooutput 2>$outpath");
 }
