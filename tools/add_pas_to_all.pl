@@ -30,13 +30,13 @@ else
 my $tools = "$projekty/deepud/tools";
 my $enhanced = "$projekty/deepud/data/enhanced";
 my $workdeep = "$projekty/deepud/data/deep"; # release 2.4 is in a local git on Dan's laptop in $projekty/wdeep
-my $release = 'http://hdl.handle.net/11234/1-2988'; # UD release 2.4
+my $release = 'http://hdl.handle.net/11234/1-3105'; # UD release 2.5
 opendir(DIR, $enhanced) or die("Cannot read folder $enhanced: $!");
 my @folders = sort(grep {m/^UD_/} (readdir(DIR)));
 closedir(DIR);
 foreach my $folder (@folders)
 {
-    #next unless($folder eq 'UD_English-EWT'); ###!!!
+    next unless($folder eq 'UD_English-EWT'); ###!!!
     opendir(DIR, "$enhanced/$folder") or die("Cannot read folder $enhanced/$folder: $!");
     my @files = grep {m/\.conllu$/} (readdir(DIR));
     closedir(DIR);
