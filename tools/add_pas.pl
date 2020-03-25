@@ -10,29 +10,12 @@ binmode(STDOUT, ':utf8');
 binmode(STDERR, ':utf8');
 use List::MoreUtils qw(any);
 use Getopt::Long;
-# We need to tell Perl where to find my graph modules.
-# If this does not work, you can put the script together with Graph.pm and
-# Node.pm in a folder of you choice, say, /home/joe/scripts, and then
-# invoke Perl explicitly telling it where the modules are:
-# perl -I/home/joe/scripts /home/joe/scripts/add_pas.pl inputfile.conllu
-BEGIN
-{
-    use Cwd;
-    my $path = $0;
-    my $currentpath = getcwd();
-    $currentpath =~ s/\r?\n$//;
-    $libpath = $currentpath;
-    if($path =~ m:/:)
-    {
-        $path =~ s:/[^/]*$:/:;
-        chdir($path);
-        $libpath = getcwd();
-        chdir($currentpath);
-    }
-    $libpath =~ s/\r?\n$//;
-    #print STDERR ("libpath=$libpath\n");
-}
-use lib $libpath;
+# We need Dan's graph modules, Graph and Node. They are versioned in the UD
+# tools repository (https://github.com/UniversalDependencies/tools). Clone
+# the repository to your system, e.g. to /home/myself/tools. Then either make
+# sure that the environment variable PERL5LIB contains /home/myself/tools, or
+# point Perl explicitly to the folder when running this script:
+# perl -I/home/myself/tools add_pas.pl --release http://hdl.handle.net/11234/1-2988 --folder UD_Language-TBK --file inputfile.conllu
 use Graph;
 use Node;
 
@@ -46,9 +29,9 @@ $config{debug} = 0;
 # The specification of the CoNLL-U Plus format (https://universaldependencies.org/ext-format.html)
 # recommends using '*' for empty but known values, and '_' for unknown values
 # (as in blind test data). It is used that way in the PARSEME initiative but
-# it is not used that way in core UD (where '_' serves both purposes). I still
-# don't know whether I like the '*' proposal and whether we actually need it.
-# But we should fix it once we release the data.
+# it is not used that way in core UD (where '_' serves both purposes). We used
+# '_' in the first release of Deep UD (2.4), so we should stick to it unless we
+# find out that the distinction is really needed.
 $config{empty} = '_'; # '*'
 $config{udpath} = '.';
 GetOptions
