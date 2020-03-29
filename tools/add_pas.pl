@@ -21,7 +21,7 @@ use Node;
 
 sub usage
 {
-    # Example: /net/work/people/zeman/mrptask/tools/add_pas.pl --udpath /net/work/people/droganova/Data_for_Enhancer/final_2.4 --release http://hdl.handle.net/11234/1-2988 --folder UD_Czech-PUD --file cs_pud-ud-test.conllu |& less
+    # Example: /net/work/people/zeman/mrptask/tools/add_pas.pl --udpath /net/work/people/zeman/deepud/data/enhanced --release http://hdl.handle.net/11234/1-2988 --folder UD_Czech-PUD --file cs_pud-ud-test.conllu |& cut -f1-6 | less
     print STDERR ("Usage: perl add_pas.pl [--debug] [--udpath <path-to-all-ud-folders>] --release <handle-url> --folder UD_Language-TBK --file <conllufilename>\n");
 }
 
@@ -215,7 +215,7 @@ sub print_sentence
     {
         if($debug)
         {
-            print("\# global.columns = ID FORM DEEP:PRED DEEP:ARGS DEEP:ARGPATT FEATS HEAD DEPREL DEPS MISC LEMMA");
+            print("\# global.columns = ID FORM DEEP:PRED DEEP:ARGS DEEP:ARGPATT DEPS HEAD DEPREL FEATS MISC LEMMA");
             if($eplus)
             {
                 print(" DEEP:EPLUS");
@@ -269,8 +269,8 @@ sub print_sentence
                 $node->predicate().(' ' x ($mlpred-length($node->predicate()))),
                 $arglinks.(' ' x ($mlargs-length($arglinks))),
                 $node->argpattern().(' ' x ($mlpatt-length($node->argpattern()))), # místo nezajímavého $node->xpos(),
+                $node->_deps(), $node->bparent(), $node->bdeprel(),
                 $node->get_feats_string().(' ' x ($mlfeat-length($node->get_feats_string()))),
-                $node->bparent(), $node->bdeprel(), $node->_deps(),
                 $node->get_misc_string(),
                 $node->lemma()
             );
