@@ -9,6 +9,8 @@ binmode(STDIN, ':utf8');
 binmode(STDOUT, ':utf8');
 binmode(STDERR, ':utf8');
 
+my $text = '';
+my $mwt_until;
 while(<>)
 {
     # When generating empty nodes, Stanford Enhancer copies a non-empty node with
@@ -51,6 +53,64 @@ while(<>)
         }
         $f[8] = join('|', @deps);
         $_ = join("\t", @f);
+    }
+    # If there is a SpaceAfter=No on the initial line of a multi-word token,
+    # the Stanford Enhancer drops it.
+    if(m/^\#\s*text\s*=\s*(.+)$/)
+    {
+        # Remember the current sentence text.
+        $text = $1;
+        $text =~ s/\r?\n$//;
+    }
+    elsif(m/^\d+-(\d+)\t/)
+    {
+        $mwt_until = $1;
+        my @f = split(/\t/, $_);
+        my $form = $f[1];
+        if(substr($text, 0, length($form)) eq $form)
+        {
+            $text = substr($text, length($form));
+        }
+        if($text !~ s/^\s+//)
+        {
+            # There is no space after the current token. Make sure that it is
+            # indicated in the MISC column.
+            my $misc = $f[9];
+            $misc =~ s/\r?\n$//;
+            if($misc eq '_')
+            {
+                $misc = 'SpaceAfter=No';
+            }
+            else
+            {
+                my @misc = split(/\|/, $misc);
+                if(!grep {$_ eq 'SpaceAfter=No'} (@misc))
+                {
+                    push(@misc, 'SpaceAfter=No');
+                }
+                $misc = join('|', @misc);
+            }
+            $f[9] = $misc."\n";
+        }
+        $_ = join("\t", @f);
+    }
+    elsif(m/^(\d+)\t/ && !(defined($mwt_until) && $1<=$mwt_until))
+    {
+        $mwt_until = undef;
+        # We do not expect SpaceAfter errors at normal tokens and we do not try to fix them.
+        # But we still must consume the prefix of the sentence text to keep it synchronized.
+        my @f = split(/\t/, $_);
+        my $form = $f[1];
+        if(substr($text, 0, length($form)) eq $form)
+        {
+            $text = substr($text, length($form));
+        }
+        $text =~ s/^\s+//;
+    }
+    elsif(m/^\s*$/)
+    {
+        $mwt_until = undef;
+        $text = undef;
     }
     print;
 }
