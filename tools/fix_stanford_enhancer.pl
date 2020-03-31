@@ -64,7 +64,16 @@ while(<>)
     }
     elsif(m/^\d+-(\d+)\t/)
     {
-        $mwt_until = $1;
+        my $new_mwt_until = $1;
+        # Another error of the Stanford Enhancer is that it copies the multi-word-token
+        # line if it generates an empty node that is a copy of one of the words inside
+        # the MWT span. So if we see an interval while another interval is still in
+        # effect, we will ignore it and NOT pass it to the output.
+        if(defined($mwt_until))
+        {
+            next;
+        }
+        $mwt_until = $new_mwt_until;
         my @f = split(/\t/, $_);
         my $form = $f[1];
         if(substr($text, 0, length($form)) eq $form)
