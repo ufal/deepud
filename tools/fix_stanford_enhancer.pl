@@ -68,8 +68,10 @@ while(<>)
         # Another error of the Stanford Enhancer is that it copies the multi-word-token
         # line if it generates an empty node that is a copy of one of the words inside
         # the MWT span. So if we see an interval while another interval is still in
-        # effect, we will ignore it and NOT pass it to the output.
-        if(defined($mwt_until))
+        # effect, we will ignore it and NOT pass it to the output. Note that the
+        # other interval must have the same "until" value because we cannot exclude
+        # the possibility that there are two subsequent and valid multi-word tokens.
+        if(defined($mwt_until) && $mwt_until == $new_mwt_until)
         {
             next;
         }
