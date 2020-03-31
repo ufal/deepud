@@ -25,5 +25,32 @@ while(<>)
         $line = join("\t", @f);
         $_ = $line."\n";
     }
+    # Czech data occasionally contains a lemma with an explanatory comment which
+    # should have been removed but was not because of missing closing bracket.
+    # Stanford Enhancer copies it to the enhanced dependency label but it contains
+    # characters that must not occur there:
+    # 4:conj:and_^(obv._souč._anglických_názvů,_"a"
+    # We cannot remove it completely because we might remove something legitimate
+    # in other languages (and the error should be fixed elsewhere). But we must
+    # remove non-letter, non-underscore characters.
+    if(m/^\d+(\.\d+)?\t/)
+    {
+        my @f = split(/\t/, $_);
+        my @deps = split(/\|/, $f[8]);
+        foreach my $dep (@deps)
+        {
+            my @parts = split(/:/, $dep);
+            # Only the last part is affected by the error.
+            $parts[-1] =~ s/[^_\p{Ll}\p{Lm}\p{Lo}\p{M}]//g;
+            if($parts[-1] eq '')
+            {
+                pop(@parts);
+            }
+            # Even if we had to remove the last part, there must be other parts, so we should be fine now.
+            $dep = join(':', @parts);
+        }
+        $f[8] = join('|', @deps);
+        $_ = join("\t", @f);
+    }
     print;
 }
