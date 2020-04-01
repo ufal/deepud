@@ -125,5 +125,25 @@ while(<>)
         $mwt_until = undef;
         $text = undef;
     }
+    # The Stanford Enhancer occasionally generates a graph without root. It seems
+    # that it forgets the 0:root relation when the node is at the same time the
+    # target of a newly added *:relsubj relation. However, the guidelines do not
+    # say that the original parent link should disappear, regardless whether it
+    # is 0:root or something else. (This error was observed in Italian ISDT.)
+    if(m/^\d+\t.+\t0\troot\t/)
+    {
+        my @f = split(/\t/, $_);
+        # To be safe, double-check that "0\troot" really appears in the expected columns.
+        if($f[6] eq '0' && $f[7] eq 'root')
+        {
+            my @deps = split(/\|/, $f[8]);
+            if(!grep {m/^0:root(:|$)/} (@deps))
+            {
+                unshift(@deps, '0:root');
+            }
+            $f[8] = join('|', @deps);
+        }
+        $_ = join("\t", @f);
+    }
     print;
 }
