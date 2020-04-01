@@ -46,6 +46,7 @@ while(<>)
             $parts[-1] =~ s/[^_\p{Ll}\p{Lm}\p{Lo}\p{M}]//g;
             $parts[-1] =~ s/^_+//;
             $parts[-1] =~ s/_+$//;
+            $parts[-1] =~ s/_+/_/g;
             if($parts[-1] eq '')
             {
                 pop(@parts);
