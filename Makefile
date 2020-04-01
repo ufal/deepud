@@ -127,6 +127,9 @@ patch_with_trusted:
 	cp data/ud/UD_Swedish-Talbanken/*.conllu data/enhanced/UD_Swedish-Talbanken
 	cp data/ud/UD_Swedish-PUD/*.conllu data/enhanced/UD_Swedish-PUD
 
+validate:
+	for i in data/enhanced/UD_* ; do echo $$i ; validate.py --level 2 --lang ud $$i ; done
+
 deep:
 	rm -rf data/deep
 	cp -r data/enhanced data/deep
