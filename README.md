@@ -87,4 +87,4 @@ Data enhanced using the Stanford enhancer is here:
 
 
 4. PACKAGE THE DATA FOR RELEASE IN LINDAT:
-tar czf deep-ud-2.4-data.tgz deep
+tar czf deep-ud-2.5-data.tgz deep

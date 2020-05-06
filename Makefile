@@ -135,3 +135,6 @@ deep:
 	cp -r data/enhanced data/deep
 	for i in data/deep/UD_* ; do pushd $$i ; cat *.conllu > all.conllu ; popd ; done
 	# Now call tools/add_pas_to_all.pl
+
+pack:
+	cd data ; tar czf deep-ud-2.5-data.tgz deep
