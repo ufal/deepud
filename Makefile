@@ -87,7 +87,8 @@ emb_for_stanford:
 check_embeddings:
 	for i in `cat data/languages.txt` ; do if [[ ! -d data/embeddings/$$i ]] ; then echo Missing embeddings for language $$i. ; fi ; done
 
-# Remove enhanced graphs from UD-released treebanks (except the trusted ones).
+# Remove enhanced graphs from UD-released treebanks.
+# We do it even to the trusted treebanks but we will later not use their Stanford enhancements.
 nodeps:
 	mkdir -p data/nodeps
 	rm -rf data/nodeps/UD_*
