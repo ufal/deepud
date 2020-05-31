@@ -6,6 +6,7 @@ UDEXCLUDE=UD_Arabic-NYUAD UD_Bambara-CRB UD_Cantonese-HK UD_Chinese-HK UD_Chines
 CORENLPDIR=/net/work/people/droganova/CoreNLP
 
 fetch:
+	rm -rf data/ud
 	mkdir -p data/ud
 	cp -r $(UDSRCDIR)/UD_* data/ud
 	cd data/ud ; rm -rf $(UDEXCLUDE)
