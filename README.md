@@ -1,7 +1,7 @@
 1. Clone the CoreNLP repository (it contains the Stanford Enhancer) and build the project
 https://github.com/stanfordnlp/CoreNLP
 We use a version we built from CoreNLP GitHub (commit #5fdbfb2).
-Our copy of CorNLP is at /net/work/people/droganova/CoreNLP.
+Our copy of CoreNLP is at /net/work/people/droganova/CoreNLP.
 
 Note: That folder also contains a shell script for each CoNLL-U file. It illustrates
 how Kira processed the file. And the script can be submitted as a job to the cluster.
@@ -13,42 +13,41 @@ including the script "enhance_them_all.sh", which submits the jobs to the cluste
 2. Obtain the official release of Universal Dependencies.
 See https://universaldependencies.org/ for the permanent URI of the latest UD release.
 At ÚFAL, we have all releases in /net/data, e.g.:
-/net/data/universal-dependencies-2.5
+/net/data/universal-dependencies-2.6
 
-We must exclude some UD treebanks:
-6 treebanks because they have no text (copyright issues)
+There are 163 treebanks in UD 2.6.
+We must exclude the following treebanks:
+7 treebanks because they have no text (copyright issues)
 
 UD_Arabic-NYUAD
 UD_English-ESL
+UD_English-GUMReddit
 UD_French-FTB
 UD_Hindi_English-HIENCS
 UD_Japanese-BCCWJ
 UD_Mbya_Guarani-Dooley
 
-19 others because their lemmatization is incomplete
+16 others because their lemmatization is incomplete
 (note that we do not exclude a treebank if it has automatically predicted lemmas):
 
 UD_Bambara-CRB
 UD_Cantonese-HK
 UD_Chinese-HK
 UD_Chinese-PUD
-UD_French-PUD
 UD_Hindi-PUD
 UD_Indonesian-PUD
 UD_Korean-PUD
 UD_Maltese-MUDT
 UD_Old_French-SRCMF
-UD_Persian-Seraji
-UD_Portuguese-GSD
 UD_Portuguese-PUD
 UD_Spanish-PUD
 UD_Swedish_Sign_Language-SSLC
+UD_Swiss_German-UZH
 UD_Telugu-MTG
 UD_Thai-PUD
-UD_Turkish-PUD
 UD_Uyghur-UDT
 
-121 treebanks remain.
+140 treebanks remain.
 For the first version we use only automatically enhanced graphs, even in treebanks where some enhancements
 are available. This is because it is not trivial to merge partial manual enhancements with automatic ones.
 

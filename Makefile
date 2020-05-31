@@ -1,7 +1,8 @@
 SHELL=/bin/bash
-UDSRCDIR=/net/data/universal-dependencies-2.5
-UDEXCLUDE=UD_Arabic-NYUAD UD_Bambara-CRB UD_Cantonese-HK UD_Chinese-HK UD_Chinese-PUD UD_English-ESL UD_French-FTB UD_French-PUD UD_Hindi-PUD UD_Hindi_English-HIENCS UD_Indonesian-PUD UD_Japanese-BCCWJ UD_Korean-PUD UD_Maltese-MUDT UD_Mbya_Guarani-Dooley UD_Old_French-SRCMF UD_Persian-Seraji UD_Portuguese-GSD UD_Portuguese-PUD UD_Spanish-PUD UD_Swedish_Sign_Language-SSLC UD_Swiss_German-UZH UD_Telugu-MTG UD_Thai-PUD UD_Turkish-PUD UD_Uyghur-UDT
-# Every time we need to check the newly added treebanks. Do they have lemmas?
+UDSRCDIR=/net/data/universal-dependencies-2.6
+UDEXCLUDE=UD_Arabic-NYUAD UD_Bambara-CRB UD_Cantonese-HK UD_Chinese-HK UD_Chinese-PUD UD_English-ESL UD_English-GUMReddit UD_French-FTB UD_Hindi-PUD UD_Hindi_English-HIENCS UD_Indonesian-PUD UD_Japanese-BCCWJ UD_Korean-PUD UD_Maltese-MUDT UD_Mbya_Guarani-Dooley UD_Old_French-SRCMF UD_Portuguese-PUD UD_Spanish-PUD UD_Swedish_Sign_Language-SSLC UD_Swiss_German-UZH UD_Telugu-MTG UD_Thai-PUD UD_Uyghur-UDT
+# Every time we need to check the newly added treebanks. Do they have lemmas? Do they have text?
+# Occasionally we should also check the previously excluded treebanks. Maybe lemmas have been added to some of them?
 CORENLPDIR=/net/work/people/droganova/CoreNLP
 
 fetch:
@@ -13,8 +14,8 @@ languages:
 	ls data/ud | perl -e 'while(<>) { $$x .= " " . $$_ } $$x =~ s/^\s+//s; $$x =~ s/\s+$$//s; @x=map{s/^UD_//; s/-.*//; $$_}(split(/\s+/,$$x)); foreach my $$x (@x) { $$x{$$x}++ } print(join(" ",sort(keys(%x))))' > data/languages.txt
 
 # The Stanford Enhancer needs the list of relative pronouns for each language.
-###!!! Forms or lemmas?
-# Probably forms. See also /net/work/people/droganova/Data_for_Enhancer/rel_pronouns.
+# It is not clear whether the pronouns should be forms or lemmas, but probably it should be forms.
+# See also /net/work/people/droganova/Data_for_Enhancer/rel_pronouns.
 relpron:
 	mkdir -p data/relpron
 	for i in `cat data/languages.txt` ; do cat data/ud/UD_$$i*/*.conllu | perl -e 'while(<>) { if(m/^\d+\t/) { @f=split(/\t/); @pt=grep{/^PronType=/}(split(/\|/,$$f[5])); if(@pt && $$pt[0]=~/Rel/) { $$h{$$f[2]}++ } } } @k=sort(keys(%h)); print(join("|",@k))' > data/relpron/relpron-$$i.txt ; done
