@@ -51,17 +51,22 @@ UD_Uyghur-UDT
 For the first version we use only automatically enhanced graphs, even in treebanks where some enhancements
 are available. This is because it is not trivial to merge partial manual enhancements with automatic ones.
 
-The following treebanks contain trusted annotation of all five
+The following treebanks contain trusted annotation of all five (six)
 enhancement types (no enhancements are needed):
 
+UD_Czech-CAC
+UD_Czech-FicTree
+UD_Czech-PDT
 UD_Dutch-Alpino
 UD_Dutch-LassySmall
 UD_English-EWT
 UD_English-PUD
+UD_Lithuanian-ALKSNIS
+UD_Slovak-SNK
 UD_Swedish-PUD
 UD_Swedish-Talbanken
 
-For the rest of the UD v2.4 treebanks we remove the original enhanced annotation and run the enhancer.
+For the rest of the UD v2.6 treebanks we remove the original enhanced annotation and run the enhancer.
 
 
 
