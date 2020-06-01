@@ -12,8 +12,13 @@ including the script "enhance_them_all.sh", which submits the jobs to the cluste
 
 2. Obtain the official release of Universal Dependencies.
 See https://universaldependencies.org/ for the permanent URI of the latest UD release.
-At ÚFAL, we have all releases in /net/data, e.g.:
-/net/data/universal-dependencies-2.6
+At ÚFAL, we have all releases in /net/data, e.g.: /net/data/universal-dependencies-2.6
+
+For every release we must assess which treebanks should be excluded (see below; the
+conditions of the old treebanks may have changed and some new treebanks may have the
+issues that lead to exclusion). We must also re-assess whether a treebank has the full
+set of enhancement types and it should thus be trusted more than the output of the
+Stanford enhancer (see below).
 
 There are 163 treebanks in UD 2.6.
 We must exclude the following treebanks:
@@ -91,4 +96,4 @@ Data enhanced using the Stanford enhancer is here:
 
 
 4. PACKAGE THE DATA FOR RELEASE IN LINDAT:
-tar czf deep-ud-2.5-data.tgz deep
+tar czf deep-ud-2.6-data.tgz deep

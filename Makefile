@@ -123,10 +123,15 @@ patch_with_basic:
 # For languages for which we have trusted full enhanced annotation, replace the
 # output of the Stanford Enhancer with the trusted annotation.
 patch_with_trusted:
+	cp data/ud/UD_Czech-CAC/*.conllu data/enhanced/UD_Czech-CAC
+	cp data/ud/UD_Czech-FicTree/*.conllu data/enhanced/UD_Czech-FicTree
+	cp data/ud/UD_Czech-PDT/*.conllu data/enhanced/UD_Czech-PDT
 	cp data/ud/UD_Dutch-Alpino/*.conllu data/enhanced/UD_Dutch-Alpino
 	cp data/ud/UD_Dutch-LassySmall/*.conllu data/enhanced/UD_Dutch-LassySmall
 	cp data/ud/UD_English-EWT/*.conllu data/enhanced/UD_English-EWT
 	cp data/ud/UD_English-PUD/*.conllu data/enhanced/UD_English-PUD
+	cp data/ud/UD_Lithuanian-ALKSNIS/*.conllu data/enhanced/UD_Lithuanian-ALKSNIS
+	cp data/ud/UD_Slovak-SNK/*.conllu data/enhanced/UD_Slovak-SNK
 	cp data/ud/UD_Swedish-Talbanken/*.conllu data/enhanced/UD_Swedish-Talbanken
 	cp data/ud/UD_Swedish-PUD/*.conllu data/enhanced/UD_Swedish-PUD
 
