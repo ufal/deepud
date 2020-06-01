@@ -38,6 +38,10 @@ while(<>)
     if(m/^\d+(\.\d+)?\t/)
     {
         my @f = split(/\t/, $_);
+        # It is even possible that the lemma contained the vertical bar, as in German GSD 'pflanze|pflanzen'.
+        # Stanford enhancer copies it to the relation label and thus breaks the syntax of DEPS, where
+        # the vertical bar delimits multiple incoming relations.
+        $f[8] =~ s/(\p{Ll})\|(\D)/${1}_${2}/g;
         my @deps = split(/\|/, $f[8]);
         foreach my $dep (@deps)
         {
@@ -53,6 +57,14 @@ while(<>)
             }
             # Even if we had to remove the last part, there must be other parts, so we should be fine now.
             $dep = join(':', @parts);
+        }
+        # Occasionally the Stanford Enhancer adds a self-loop, which is illegal in UD.
+        # All cases observed so far are with empty nodes. Remove the self-loops.
+        @deps = grep {my @parts = split(/:/, $_); $parts[0] != $f[0]} (@deps);
+        # Is anything left after we removed offending relations?
+        if(scalar(@deps)==0)
+        {
+            @deps = ('0:root');
         }
         $f[8] = join('|', @deps);
         $_ = join("\t", @f);

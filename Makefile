@@ -96,6 +96,7 @@ nodeps:
 	for i in data/nodeps/UD_*/*.conllu ; do echo $$i ; cat $$i | perl -pe 'if(m/^\d+\t/) { @f=split(/\t/); $$f[8]="_"; $$_=join("\t",@f); }' > nodeps ; mv nodeps $$i ; done
 
 # Apply the Stanford Enhancer to the treebanks.
+# Note that stanford_enhancer.sh calls fix_stanford_enhancer.pl to fix validation errors caused by the Stanford Enhancer.
 enhance:
 	mkdir -p data/enhanced
 	rm -rf data/enhanced/UD_*
