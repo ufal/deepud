@@ -21,7 +21,11 @@ while(<>)
         s/\r?\n$//;
         my $line = $_;
         my @f = split(/\t/, $line);
-        my @misc = grep {$_ ne 'SpaceAfter=No'} (split(/\|/, $f[9]));
+        # Warning: Occasionally a treebank has leading '|', trailing '|', or two
+        # consecutive '||'. All this effectively means empty MISC attributes and
+        # it could cause us to make the whole MISC value empty, which would be
+        # illegal!
+        my @misc = grep {$_ ne 'SpaceAfter=No' && $_ ne ''} (split(/\|/, $f[9]));
         push(@misc, '_') if(scalar(@misc)==0);
         $f[9] = join('|', @misc);
         $line = join("\t", @f);
