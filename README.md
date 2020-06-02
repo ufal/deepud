@@ -90,9 +90,6 @@ We have an unpacked copy of the embeddings here:
 For every language, we extract lists of relative pronouns relying on PronType feature (PronType=Rel; https://universaldependencies.org/u/feat/PronType.html#Rel).
 If PronType feature is not available in neither of treebanks of a language, we run the enhancer with -relativePronouns "".
 
-Data enhanced using the Stanford enhancer is here:
-/net/work/people/droganova/Data_for_Enhancer/final_2.4
-
 
 
 4. PACKAGE THE DATA FOR RELEASE IN LINDAT:
