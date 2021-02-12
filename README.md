@@ -12,7 +12,7 @@ including the script "enhance_them_all.sh", which submits the jobs to the cluste
 
 2. Obtain the official release of Universal Dependencies.
 See https://universaldependencies.org/ for the permanent URI of the latest UD release.
-At ÚFAL, we have all releases in /net/data, e.g.: /net/data/universal-dependencies-2.6
+At ÚFAL, we have all releases in /net/data, e.g.: /net/data/universal-dependencies-2.7
 
 For every release we must assess which treebanks should be excluded (see below; the
 conditions of the old treebanks may have changed and some new treebanks may have the
@@ -20,7 +20,7 @@ issues that lead to exclusion). We must also re-assess whether a treebank has th
 set of enhancement types and it should thus be trusted more than the output of the
 Stanford enhancer (see below).
 
-There are 163 treebanks in UD 2.6.
+There are 183 treebanks in UD 2.7.
 We must exclude the following treebanks:
 7 treebanks because they have no text (copyright issues)
 
@@ -32,18 +32,21 @@ UD_Hindi_English-HIENCS
 UD_Japanese-BCCWJ
 UD_Mbya_Guarani-Dooley
 
-16 others because their lemmatization is incomplete
+19 others because their lemmatization is incomplete
 (note that we do not exclude a treebank if it has automatically predicted lemmas):
 
 UD_Bambara-CRB
 UD_Cantonese-HK
 UD_Chinese-HK
 UD_Chinese-PUD
+UD_Chukchi-HSE
+UD_Faroese-FarPaHC
 UD_Hindi-PUD
 UD_Indonesian-PUD
 UD_Korean-PUD
 UD_Maltese-MUDT
 UD_Old_French-SRCMF
+UD_Old_Turkish-Tonqq
 UD_Portuguese-PUD
 UD_Spanish-PUD
 UD_Swedish_Sign_Language-SSLC
@@ -52,11 +55,11 @@ UD_Telugu-MTG
 UD_Thai-PUD
 UD_Uyghur-UDT
 
-140 treebanks remain.
+157 treebanks remain.
 For the first version we use only automatically enhanced graphs, even in treebanks where some enhancements
 are available. This is because it is not trivial to merge partial manual enhancements with automatic ones.
 
-The following treebanks contain trusted annotation of all five (six)
+The following treebanks contain trusted annotation of all six
 enhancement types (no enhancements are needed):
 
 UD_Czech-CAC
@@ -66,12 +69,13 @@ UD_Dutch-Alpino
 UD_Dutch-LassySmall
 UD_English-EWT
 UD_English-PUD
+UD_Italian-ISDT
 UD_Lithuanian-ALKSNIS
 UD_Slovak-SNK
 UD_Swedish-PUD
 UD_Swedish-Talbanken
 
-For the rest of the UD v2.6 treebanks we remove the original enhanced annotation and run the enhancer.
+For the rest of the UD v2.7 treebanks we remove the original enhanced annotation and run the enhancer.
 
 
 
