@@ -109,12 +109,16 @@ check_enhancement_errors:
 	echo Problems with graphs: `grep 'Problem with graph' enhancer-cluster/*.o* | wc -l`
 	grep -iP 'error|exception' enhancer-cluster/*.o*
 
+# If the following target says, e.g., Need to rerun data/nodeps/UD_Ancient_Greek-PROIEL/grc_proiel-ud-train.conllu src=187033 tgt=123484,
+# we may qrsh to a cluster machine and then run:
+# pushd enhancer-cluster ; ./grc_proiel-ud-train.sh ; popd
+# However, if the error is that the Stanford enhancer crashes on particular data, rerunning it will not help.
 check_enhancement_wcc:
 	for i in data/nodeps/UD_* ; do echo ; echo `basename $$i` ; for j in $$i/*.conllu ; do echo `basename $$j` ; wc_conll.pl $$j ; wc_conll.pl data/enhanced/`basename $$i`/`basename $$j` ; done ; done
 	for i in data/nodeps/UD_* ; do for j in $$i/*.conllu ; do k=data/enhanced/`basename $$i`/`basename $$j` ; src=`wc_conll.pl $$j | perl -pe 's/^.*, (\d+) tokens.*$$/\1/ or $$_=0'` ; tgt=`wc_conll.pl $$k | perl -pe 's/^.*, (\d+) tokens.*$$/\1/ or $$_=0'` ; if [[ "$$src" != "$$tgt" ]] ; then echo Need to rerun $$j src=$$src tgt=$$tgt ; fi ; done ; done
 
 enhanced_stats:
-	for i in data/enhanced/UD_* ; do echo $$i ; ( cat $$i/*.conllu | enhanced_graph_properties.pl ) ; echo ; done
+	( for i in data/enhanced/UD_* ; do echo $$i ; ( cat $$i/*.conllu | enhanced_graph_properties.pl ) ; echo ; done ) |& tee estats.log
 
 # Make sure every file in "enhanced" contains all tokens and has something valid in the DEPS column.
 # If the Stanford Enhancer crashed, copy the basic tree to DEPS.
@@ -131,6 +135,7 @@ patch_with_trusted:
 	cp data/ud/UD_Dutch-LassySmall/*.conllu data/enhanced/UD_Dutch-LassySmall
 	cp data/ud/UD_English-EWT/*.conllu data/enhanced/UD_English-EWT
 	cp data/ud/UD_English-PUD/*.conllu data/enhanced/UD_English-PUD
+	cp data/ud/UD_Italian-ISDT/*.conllu data/enhanced/UD_Italian-ISDT
 	cp data/ud/UD_Lithuanian-ALKSNIS/*.conllu data/enhanced/UD_Lithuanian-ALKSNIS
 	cp data/ud/UD_Slovak-SNK/*.conllu data/enhanced/UD_Slovak-SNK
 	cp data/ud/UD_Swedish-Talbanken/*.conllu data/enhanced/UD_Swedish-Talbanken
