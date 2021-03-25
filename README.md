@@ -20,6 +20,9 @@ issues that lead to exclusion). We must also re-assess whether a treebank has th
 set of enhancement types and it should thus be trusted more than the output of the
 Stanford enhancer (see below).
 
+Make sure to update the source release and the list of excluded treebanks in the
+Makefile!
+
 There are 183 treebanks in UD 2.7.
 We must exclude the following treebanks:
 7 treebanks because they have no text (copyright issues)
