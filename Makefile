@@ -1,5 +1,6 @@
 SHELL=/bin/bash
-UDSRCDIR=/net/data/universal-dependencies-2.7
+RELEASE=2.7
+UDSRCDIR=/net/data/universal-dependencies-$(RELEASE)
 UDEXCLUDE=UD_Arabic-NYUAD UD_Bambara-CRB UD_Cantonese-HK UD_Chinese-HK UD_Chinese-PUD UD_Chukchi-HSE UD_English-ESL UD_English-GUMReddit UD_Faroese-FarPaHC UD_French-FTB UD_Hindi-PUD UD_Hindi_English-HIENCS UD_Indonesian-PUD UD_Japanese-BCCWJ UD_Korean-PUD UD_Maltese-MUDT UD_Mbya_Guarani-Dooley UD_Old_French-SRCMF UD_Old_Turkish-Tonqq UD_Portuguese-PUD UD_Spanish-PUD UD_Swedish_Sign_Language-SSLC UD_Swiss_German-UZH UD_Telugu-MTG UD_Thai-PUD UD_Uyghur-UDT
 # Every time we need to check the newly added treebanks. Do they have lemmas? Do they have text?
 # Occasionally we should also check the previously excluded treebanks. Maybe lemmas have been added to some of them?
@@ -153,4 +154,4 @@ deep:
 	tools/add_pas_to_all.pl
 
 pack:
-	cd data ; tar czf deep-ud-2.6-data.tgz deep
+	cd data ; tar czf deep-ud-$(RELEASE)-data.tgz deep

@@ -100,4 +100,4 @@ If PronType feature is not available in neither of treebanks of a language, we r
 
 
 4. PACKAGE THE DATA FOR RELEASE IN LINDAT:
-tar czf deep-ud-2.6-data.tgz deep
+tar czf deep-ud-2.7-data.tgz deep
