@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 # Fixes specific errors made by the Stanford Enhancer (without it, the enhanced output is not valid CoNLL-U).
-# Copyright © 2020 Dan Zeman <zeman@ufal.mff.cuni.cz>
+# Copyright © 2020, 2021 Dan Zeman <zeman@ufal.mff.cuni.cz>
 # License: GNU GPL
 
 use utf8;
@@ -46,6 +46,11 @@ while(<>)
         # Stanford enhancer copies it to the relation label and thus breaks the syntax of DEPS, where
         # the vertical bar delimits multiple incoming relations.
         $f[8] =~ s/(\p{Ll})\|(\D)/${1}_${2}/g;
+        # Furthermore, the Stanford enhancer sometimes inserts a colon before a coordinating conjunction.
+        # It happened in Latin ITTB and in Manx Cadhan. The cause seems to be that the enhancer copies
+        # dependents of the conjunction, if any, and the dependent is sometimes a colon. This is also
+        # a significant error because colon acts as a delimiter between the head ID and the dependency relation (or its subtype).
+        $f[8] =~ s/:+/:/g;
         my @deps = split(/\|/, $f[8]);
         foreach my $dep (@deps)
         {
