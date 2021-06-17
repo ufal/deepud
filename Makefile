@@ -159,5 +159,8 @@ deep:
 	for i in data/deep/UD_* ; do pushd $$i ; cat *.conllu > all.conllu ; popd ; done
 	tools/add_pas_to_all.pl
 
+# We will need the list of languages and the size (sentences, tokens, words) when publishing the package in Lindat.
 pack:
 	cd data ; tar czf deep-ud-$(RELEASE)-data.tgz deep
+	cat data/languages.txt
+	cat data/deep/UD_*/all.conllu | wcc
