@@ -6,6 +6,10 @@ UDEXCLUDE=UD_Arabic-NYUAD UD_Bambara-CRB UD_Cantonese-HK UD_Chinese-HK UD_Chines
 # Occasionally we should also check the previously excluded treebanks. Maybe lemmas have been added to some of them?
 CORENLPDIR=/net/work/people/droganova/CoreNLP
 
+# It is recommended to run make all |& tee make.log
+# The 'enhance' step assumes we can submit jobs to the cluster via qsub!
+all: fetch languages relpron check_embeddings nodeps enhance enhanced_stats patch_with_basic patch_with_trusted validate deep pack
+
 fetch:
 	rm -rf data/ud
 	mkdir -p data/ud
