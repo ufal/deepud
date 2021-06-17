@@ -12,7 +12,7 @@ including the script "enhance_them_all.sh", which submits the jobs to the cluste
 
 2. Obtain the official release of Universal Dependencies.
 See https://universaldependencies.org/ for the permanent URI of the latest UD release.
-At ÚFAL, we have all releases in /net/data, e.g.: /net/data/universal-dependencies-2.7
+At ÚFAL, we have all releases in /net/data, e.g.: /net/data/universal-dependencies-2.8
 
 For every release we must assess which treebanks should be excluded (see below; the
 conditions of the old treebanks may have changed and some new treebanks may have the
@@ -23,7 +23,7 @@ Stanford enhancer (see below).
 Make sure to update the source release and the list of excluded treebanks in the
 Makefile!
 
-There are 183 treebanks in UD 2.7.
+There are 202 treebanks in UD 2.8.
 We must exclude the following treebanks:
 7 treebanks because they have no text (copyright issues)
 
@@ -78,7 +78,7 @@ UD_Slovak-SNK
 UD_Swedish-PUD
 UD_Swedish-Talbanken
 
-For the rest of the UD v2.7 treebanks we remove the original enhanced annotation and run the enhancer.
+For the rest of the UD v2.8 treebanks we remove the original enhanced annotation and run the enhancer.
 
 
 
@@ -100,4 +100,4 @@ If PronType feature is not available in neither of treebanks of a language, we r
 
 
 4. PACKAGE THE DATA FOR RELEASE IN LINDAT:
-tar czf deep-ud-2.7-data.tgz deep
+tar czf deep-ud-2.8-data.tgz deep
