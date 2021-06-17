@@ -26,6 +26,8 @@ Makefile!
 There are 202 treebanks in UD 2.8.
 We must exclude the following treebanks:
 7 treebanks because they have no text (copyright issues)
+Check the text-less treebanks like this (do not forget to update the release number):
+  grep -i -P '^Includes text: *no' /net/data/universal-dependencies-2.8/UD_*/README*
 
 UD_Arabic-NYUAD
 UD_English-ESL
@@ -37,6 +39,7 @@ UD_Mbya_Guarani-Dooley
 
 19 others because their lemmatization is incomplete
 (note that we do not exclude a treebank if it has automatically predicted lemmas):
+How to check the lemmas automatically? I did not update the list after release 2.8.
 
 UD_Bambara-CRB
 UD_Cantonese-HK
@@ -58,19 +61,21 @@ UD_Telugu-MTG
 UD_Thai-PUD
 UD_Uyghur-UDT
 
-157 treebanks remain.
+176 treebanks remain.
 For the first version we use only automatically enhanced graphs, even in treebanks where some enhancements
 are available. This is because it is not trivial to merge partial manual enhancements with automatic ones.
 
 The following treebanks contain trusted annotation of all six
 enhancement types (no enhancements are needed):
 
+UD_Belarusian-HSE
 UD_Czech-CAC
 UD_Czech-FicTree
 UD_Czech-PDT
 UD_Dutch-Alpino
 UD_Dutch-LassySmall
 UD_English-EWT
+UD_English-GUM
 UD_English-PUD
 UD_Italian-ISDT
 UD_Lithuanian-ALKSNIS
