@@ -12,7 +12,7 @@ including the script "enhance_them_all.sh", which submits the jobs to the cluste
 
 2. Obtain the official release of Universal Dependencies.
 See https://universaldependencies.org/ for the permanent URI of the latest UD release.
-At ÚFAL, we have all releases in /net/data, e.g.: /net/data/universal-dependencies-2.8
+At ÚFAL, we have all releases in /net/data, e.g.: /net/data/universal-dependencies-2.10
 
 For every release we must assess which treebanks should be excluded (see below; the
 conditions of the old treebanks may have changed and some new treebanks may have the
@@ -23,11 +23,11 @@ Stanford enhancer (see below).
 Make sure to update the source release and the list of excluded treebanks in the
 Makefile!
 
-There are 202 treebanks in UD 2.8.
+There are 228 treebanks in UD 2.10.
 We must exclude the following treebanks:
-7 treebanks because they have no text (copyright issues)
+8 treebanks because they have no text (copyright issues)
 Check the text-less treebanks like this (do not forget to update the release number):
-  grep -i -P '^Includes text: *no' /net/data/universal-dependencies-2.8/UD_*/README*
+  grep -i -P '^Includes text: *no' /net/data/universal-dependencies-2.10/UD_*/README*
 
 UD_Arabic-NYUAD
 UD_English-ESL
@@ -35,11 +35,15 @@ UD_English-GUMReddit
 UD_French-FTB
 UD_Hindi_English-HIENCS
 UD_Japanese-BCCWJ
+UD_Japanese-BCCWJLUW
 UD_Mbya_Guarani-Dooley
 
 19 others because their lemmatization is incomplete
 (note that we do not exclude a treebank if it has automatically predicted lemmas):
-How to check the lemmas automatically? I did not update the list after release 2.8.
+How to check the lemmas automatically? I have not updated the list for a long time.
+We could check for metadata Lemmas: not available; but some treebanks have lemmas,
+only they do not have them for all words, and this is something we cannot figure out
+using the metadata.
 
 UD_Bambara-CRB
 UD_Cantonese-HK
@@ -83,7 +87,7 @@ UD_Slovak-SNK
 UD_Swedish-PUD
 UD_Swedish-Talbanken
 
-For the rest of the UD v2.8 treebanks we remove the original enhanced annotation and run the enhancer.
+For the rest of the UD v2.10 treebanks we remove the original enhanced annotation and run the enhancer.
 
 
 
@@ -105,4 +109,4 @@ If PronType feature is not available in neither of treebanks of a language, we r
 
 
 4. PACKAGE THE DATA FOR RELEASE IN LINDAT:
-tar czf deep-ud-2.8-data.tgz deep
+tar czf deep-ud-2.10-data.tgz deep
