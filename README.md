@@ -28,6 +28,8 @@ We must exclude the following treebanks:
 8 treebanks because they have no text (copyright issues)
 Check for the text-less treebanks like this (do not forget to update the release number):
   grep -i -P '^Includes text: *no' /net/data/universal-dependencies-2.10/UD_*/README*
+Or better:
+  tools/select_treebanks_for_deepud.pl
 
 UD_Arabic-NYUAD
 UD_English-ESL
@@ -44,6 +46,8 @@ we used to exclude treebanks where we did not trust the lemmatization or only so
 words had lemmas; but it is probably easier to rely on the metadata in README).
 Check for the lemma-less treebanks like this (do not forget to update the release number):
   grep -i -P '^Lemmas: *not available' /net/data/universal-dependencies-2.10/UD_*/README*
+Or better:
+  tools/select_treebanks_for_deepud.pl
 
 UD_Arabic-PUD
 UD_Beja-NSC
