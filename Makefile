@@ -9,7 +9,10 @@ CORENLPDIR=/net/work/people/droganova/CoreNLP
 
 # It is recommended to run make all |& tee make.log
 # The 'enhance' step assumes we can submit jobs to the cluster via qsub!
-all: fetch languages relpron check_embeddings nodeps enhance enhanced_stats patch_with_basic patch_with_trusted validate deep pack
+# We currently do not wait for the cluster jobs to finish, meaning that the steps after 'enhance' must be invoked separately.
+all_until_enhance: fetch languages relpron check_embeddings nodeps enhance
+
+all_after_enhance: enhanced_stats patch_with_basic patch_with_trusted validate deep pack
 
 fetch:
 	rm -rf data/ud
