@@ -164,4 +164,4 @@ deep:
 pack:
 	cd data ; tar czf deep-ud-$(RELEASE)-data.tgz deep
 	cat data/languages.txt
-	cat data/deep/UD_*/all.conllu | wcc
+	cat data/deep/UD_*/all.conllu | wc_conll.pl
