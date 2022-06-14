@@ -26,7 +26,7 @@ Makefile!
 There are 228 treebanks in UD 2.10.
 We must exclude the following treebanks:
 8 treebanks because they have no text (copyright issues)
-Check the text-less treebanks like this (do not forget to update the release number):
+Check for the text-less treebanks like this (do not forget to update the release number):
   grep -i -P '^Includes text: *no' /net/data/universal-dependencies-2.10/UD_*/README*
 
 UD_Arabic-NYUAD
@@ -38,21 +38,26 @@ UD_Japanese-BCCWJ
 UD_Japanese-BCCWJLUW
 UD_Mbya_Guarani-Dooley
 
-19 others because their lemmatization is incomplete
-(note that we do not exclude a treebank if it has automatically predicted lemmas):
-How to check the lemmas automatically? I have not updated the list for a long time.
-We could check for metadata Lemmas: not available; but some treebanks have lemmas,
-only they do not have them for all words, and this is something we cannot figure out
-using the metadata.
+22 treebanks because they do not include lemmatization (some of them already excluded above)
+(note that we do not exclude a treebank if it has automatically predicted lemmas;
+we used to exclude treebanks where we did not trust the lemmatization or only some
+words had lemmas; but it is probably easier to rely on the metadata in README).
+Check for the lemma-less treebanks like this (do not forget to update the release number):
+  grep -i -P '^Lemmas: *not available' /net/data/universal-dependencies-2.10/UD_*/README*
 
-UD_Bambara-CRB
-UD_Cantonese-HK
+UD_Arabic-PUD
+UD_Beja-NSC
+UD_English-ESL
+UD_French-PUD
+UD_Frisian_Dutch-Fame
+UD_Hindi-PUD
+UD_Chinese-CFL
 UD_Chinese-HK
 UD_Chinese-PUD
 UD_Chukchi-HSE
-UD_Faroese-FarPaHC
-UD_Hindi-PUD
-UD_Indonesian-PUD
+UD_Italian-PUD
+UD_Japanese-BCCWJLUW
+UD_Japanese-BCCWJ
 UD_Korean-PUD
 UD_Maltese-MUDT
 UD_Old_French-SRCMF
@@ -61,9 +66,7 @@ UD_Portuguese-PUD
 UD_Spanish-PUD
 UD_Swedish_Sign_Language-SSLC
 UD_Swiss_German-UZH
-UD_Telugu-MTG
 UD_Thai-PUD
-UD_Uyghur-UDT
 
 176 treebanks remain.
 For the first version we use only automatically enhanced graphs, even in treebanks where some enhancements
