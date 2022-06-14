@@ -38,7 +38,7 @@ UD_Japanese-BCCWJ
 UD_Japanese-BCCWJLUW
 UD_Mbya_Guarani-Dooley
 
-22 treebanks because they do not include lemmatization (some of them already excluded above)
+22 treebanks because they do not include lemmatization (19 of them were not already excluded above)
 (note that we do not exclude a treebank if it has automatically predicted lemmas;
 we used to exclude treebanks where we did not trust the lemmatization or only some
 words had lemmas; but it is probably easier to rely on the metadata in README).
@@ -68,7 +68,7 @@ UD_Swedish_Sign_Language-SSLC
 UD_Swiss_German-UZH
 UD_Thai-PUD
 
-176 treebanks remain.
+201 treebanks remain.
 For the first version we use only automatically enhanced graphs, even in treebanks where some enhancements
 are available. This is because it is not trivial to merge partial manual enhancements with automatic ones.
 
