@@ -104,7 +104,7 @@ nodeps:
 	cp -r data/ud/UD_* data/nodeps
 	for i in data/nodeps/UD_*/*.conllu ; do echo $$i ; cat $$i | perl -pe 'if(m/^\d+\t/) { @f=split(/\t/); $$f[8]="_"; $$_=join("\t",@f); }' > nodeps ; mv nodeps $$i ; done
 
-# Apply the Stanford Enhancer to the treebanks. This steps assume we can submit jobs to the cluster via qsub!
+# Apply the Stanford Enhancer to the treebanks. This step assumes we can submit jobs to the cluster via qsub!
 # Note that stanford_enhancer.sh calls fix_stanford_enhancer.pl to fix validation errors caused by the Stanford Enhancer.
 enhance:
 	mkdir -p data/enhanced
