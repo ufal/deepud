@@ -106,14 +106,15 @@ nodeps:
 	cp -r data/ud/UD_* data/nodeps
 	for i in data/nodeps/UD_*/*.conllu ; do echo $$i ; cat $$i | perl -pe 'if(m/^\d+\t/) { @f=split(/\t/); $$f[8]="_"; $$_=join("\t",@f); }' > nodeps ; mv nodeps $$i ; done
 
-# Apply the Stanford Enhancer to the treebanks. This step assumes we can submit jobs to the cluster via qsub!
+# Apply the Stanford Enhancer to the treebanks. This step assumes we can submit jobs to the cluster via qsub.pl!
+# We use /home/zeman/bin/qsub.pl as the wrapper around the cluster submission command.
 # Note that stanford_enhancer.sh calls fix_stanford_enhancer.pl to fix validation errors caused by the Stanford Enhancer.
 enhance:
 	mkdir -p data/enhanced
 	rm -rf data/enhanced/UD_*
 	cp -r data/nodeps/UD_* data/enhanced
 	mkdir -p enhancer-cluster
-	cd enhancer-cluster ; for i in ../data/enhanced/UD_*/*.conllu ; do script=`basename $$i .conllu`.sh ; ( echo ../stanford_enhancer.sh $$i > $$script ) ; chmod 755 $$script ; git add $$script ; qsub -cwd -j y -l mem_free=10G,act_mem_free=10G,h_vmem=12G -m n $$script ; done
+	cd enhancer-cluster ; for i in ../data/enhanced/UD_*/*.conllu ; do script=`basename $$i .conllu`.sh ; ( echo ../stanford_enhancer.sh $$i > $$script ) ; chmod 755 $$script ; git add $$script ; qsub.pl $$script ; done
 
 # Check the cluster log files for Stanford Enhancer errors.
 check_enhancement_errors:
