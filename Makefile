@@ -1,10 +1,11 @@
 SHELL=/bin/bash
-RELEASE=2.10
+RELEASE=2.12
 UDSRCDIR=/net/data/universal-dependencies-$(RELEASE)
-UDEXCLUDE=UD_Arabic-NYUAD UD_Arabic-PUD UD_Beja-NSC UD_Chinese-CFL UD_Chinese-HK UD_Chinese-PUD UD_Chukchi-HSE UD_English-ESL UD_English-GUMReddit UD_French-FTB UD_French-PUD UD_Frisian_Dutch-Fame UD_Hindi-PUD UD_Hindi_English-HIENCS UD_Italian-PUD UD_Japanese-BCCWJ UD_Japanese-BCCWJLUW UD_Korean-PUD UD_Maltese-MUDT UD_Mbya_Guarani-Dooley UD_Old_French-SRCMF UD_Old_Turkish-Tonqq UD_Portuguese-PUD UD_Spanish-PUD UD_Swedish_Sign_Language-SSLC UD_Swiss_German-UZH UD_Thai-PUD
 # Every time we need to check the newly added treebanks. Do they have lemmas? Do they have text?
 # Occasionally we should also check the previously excluded treebanks. Maybe lemmas have been added to some of them?
-#   tools/select_treebanks_for_deepud.pl
+# Run the following command from the Deep UD repository and paste here the UDEXCLUDE assignment that it generates.
+#   tools/select_treebanks_for_deepud.pl --udpath /net/data/universal-dependencies-2.12
+UDEXCLUDE=UD_Arabic-NYUAD UD_Arabic-PUD UD_Beja-NSC UD_Chinese-CFL UD_Chinese-HK UD_Chinese-PUD UD_Chukchi-HSE UD_English-ESL UD_English-GUMReddit UD_French-FTB UD_French-PUD UD_Frisian_Dutch-Fame UD_Hindi-PUD UD_Hindi_English-HIENCS UD_Italian-PUD UD_Japanese-BCCWJ UD_Japanese-BCCWJLUW UD_Korean-PUD UD_Maltese-MUDT UD_Mbya_Guarani-Dooley UD_Old_French-SRCMF UD_Old_Turkish-Tonqq UD_Portuguese-PUD UD_Spanish-PUD UD_Swedish_Sign_Language-SSLC UD_Swiss_German-UZH UD_Thai-PUD
 CORENLPDIR=/net/work/people/droganova/CoreNLP
 
 # It is recommended to run make all |& tee make.log
