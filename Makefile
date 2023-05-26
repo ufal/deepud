@@ -114,7 +114,7 @@ enhance:
 	rm -rf data/enhanced/UD_*
 	cp -r data/nodeps/UD_* data/enhanced
 	mkdir -p enhancer-cluster
-	cd enhancer-cluster ; for i in ../data/enhanced/UD_*/*.conllu ; do script=`basename $$i .conllu`.sh ; ( echo ../stanford_enhancer.sh $$i > $$script ) ; chmod 755 $$script ; git add $$script ; qsub.pl $$script ; done
+	cd enhancer-cluster ; for i in ../data/enhanced/UD_*/*.conllu ; do script=`basename $$i .conllu`.sh ; ( echo ../stanford_enhancer.sh $$i > $$script ) ; chmod 755 $$script ; git add $$script ; qsub-slurm.pl $$script ; done
 
 # Check the cluster log files for Stanford Enhancer errors.
 check_enhancement_errors:
