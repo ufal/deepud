@@ -6,7 +6,7 @@ if [[ -z "$1" ]] ; then
   exit 1
 fi
 # Fixed path to our installation of Stanford CoreNLP. We could also take it as an argument if desirable.
-CORENLPDIR=/net/work/people/droganova/CoreNLP
+CORENLPDIR=/net/work/people/zeman/CoreNLP
 DEEPUDDIR=/net/work/people/zeman/deepud
 RELPRONDIR=$DEEPUDDIR/data/relpron
 EMBEDDIR=$DEEPUDDIR/data/embeddings
