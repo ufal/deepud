@@ -10,7 +10,14 @@ CORENLPDIR=/net/work/people/zeman/CoreNLP
 DEEPUDDIR=/net/work/people/zeman/deepud
 RELPRONDIR=$DEEPUDDIR/data/relpron
 EMBEDDIR=$DEEPUDDIR/data/embeddings
-TMPOUT=/COMP.TMP/$$.enhanced.conllu
+# The ÚFAL policy used to be that /COMP.TMP is used instead of /tmp.
+# However, in July 2023, these folders are no longer available on some ÚFAL machines.
+if [[ -d "/COMP.TMP" ]] ; then
+  TMPDIR=/COMP.TMP
+else
+  TMPDIR=.
+fi
+TMPOUT=$TMPDIR/$$.enhanced.conllu
 if [[ -e "$TMPOUT" ]] ; then
   echo "$TMPOUT" already exists, giving up.
   exit 1
@@ -20,7 +27,7 @@ relpron=`cat $RELPRONDIR/relpron-$language.txt`
 if [[ -d "$EMBEDDIR/$language" ]] ; then
   embeddings=$EMBEDDIR/$language/`ls -1 $EMBEDDIR/$language | grep vectors`
   echo $1 '('$language, $relpron, $embeddings')'
-  TMPVEC=/COMP.TMP/$$.vectors
+  TMPVEC=$TMPDIR/$$.vectors
   echo Extracting $embeddings to $TMPVEC...
   if [[ -e "$TMPVEC" ]] ; then
     echo "$TMPVEC" already exists, giving up.
