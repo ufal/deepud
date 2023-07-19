@@ -120,7 +120,7 @@ enhance:
 # Check the cluster log files for Stanford Enhancer errors.
 check_enhancement_errors:
 	echo Problems with graphs: `grep 'Problem with graph' enhancer-cluster/*.o* | wc -l`
-	grep -iP 'error|exception' enhancer-cluster/*.o*
+	! grep -iP 'error|exception' enhancer-cluster/*.o*
 
 # If the following target says, e.g., Need to rerun data/nodeps/UD_Ancient_Greek-PROIEL/grc_proiel-ud-train.conllu src=187033 tgt=123484,
 # we may qrsh to a cluster machine and then run:
