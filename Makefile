@@ -110,6 +110,20 @@ nodeps:
 # Apply the Stanford Enhancer to the treebanks. This step assumes we can submit jobs to the cluster via qsub.pl!
 # We use /home/zeman/bin/qsub.pl as the wrapper around the cluster submission command.
 # Note that stanford_enhancer.sh calls fix_stanford_enhancer.pl to fix validation errors caused by the Stanford Enhancer.
+
+###!!! In 2023 our copy of the Stanford enhancer stopped working.
+###!!! java -mx4g -cp /net/work/people/zeman/CoreNLP/classes edu.stanford.nlp.trees.ud.UniversalEnhancer -conlluFile ../data/enhanced/UD_Yoruba-YTB/yo_ytb-ud-test.conllu -numHid 100
+###!!! (or another input file) throws an exception:
+###!!! Exception in thread "main" java.lang.NullPointerException
+###!!!         at java.base/java.util.regex.Pattern.<init>(Pattern.java:1427)
+###!!!         at java.base/java.util.regex.Pattern.compile(Pattern.java:1069)
+###!!!         at edu.stanford.nlp.trees.ud.UniversalEnhancer.main(UniversalEnhancer.java:68)
+###!!! The current version of Java we use (perhaps the Java classes were compiled for an older version):
+###!!! openjdk 11.0.19 2023-04-18
+###!!! OpenJDK Runtime Environment (build 11.0.19+7-post-Ubuntu-0ubuntu122.04.1)
+###!!! OpenJDK 64-Bit Server VM (build 11.0.19+7-post-Ubuntu-0ubuntu122.04.1, mixed mode, sharing)
+###!!! We could debug it. But perhaps it will be better to finally write our own enhancer in Udapi.
+
 enhance:
 	mkdir -p data/enhanced
 	rm -rf data/enhanced/UD_*
